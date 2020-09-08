@@ -1,3 +1,3 @@
 # proyectoARSW
 Dinipa
-git remote add origin https://github.com/PaoCuellar/proyectoARSW.git
+https://hidden-shore-73804.herokuapp.com/subastas
