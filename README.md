@@ -44,4 +44,4 @@ Al finalizar cada Sprint, el equipo se reúne para planear el siguiente y se com
 ## Herramientas
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/66413a0ec2734ce6b0ae2e8a9271ffbc)](https://www.codacy.com/manual/PaoCuellar/proyectoARSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PaoCuellar/proyectoARSW&amp;utm_campaign=Badge_Grade)
-[CircleCi](https://circleci.com/docs/2.0/about-circleci/) [![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
+[![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
