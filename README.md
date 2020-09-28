@@ -36,7 +36,7 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://hidden-shore-7
 >- Permitir a los usuarios administradores modificar información de otros usuarios.
 
 ### Mockups
-* Inicio
+* Vista de la pagina de inicio 
   ![inicio](/Imagenes/Inicio.png)
 * Informacion del usuario
   ![VistaUsuario](/Imagenes/VistaUsuario.png)
