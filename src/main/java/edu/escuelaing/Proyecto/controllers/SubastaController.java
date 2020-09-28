@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author diego
  */
 @RestController
-@RequestMapping(value = "/subastas")
+@RequestMapping(value = "/index.html")
 public class SubastaController {
 
     @RequestMapping(method = RequestMethod.GET)
