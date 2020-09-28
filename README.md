@@ -35,6 +35,19 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://hidden-shore-7
 >- Recibir notificaciones al vender un artículo.
 >- Permitir a los usuarios administradores modificar información de otros usuarios.
 
+### Mockups
+* Vista de la pagina de inicio 
+  ![inicio](/Imagenes/Inicio.png)
+* Vista Informacion general del usuario
+  ![VistaUsuario](/Imagenes/VistaUsuario.png)
+* Agragar un articulo para subastar
+  ![AgregarArticulo](/Imagenes/AgregarArticulo.png)
+* Vista del articulo del dueño
+  ![VistaArticuloDueño](/Imagenes/VistaArticuloDueño.png)
+* Vista del usuario que participa en la subasta
+  ![VistaArticuloNormal](/Imagenes/VistaUsuarioNormal.png)
+* Vista de las subastas participadas por el usuario
+  ![SubastasParticipadas](/Imagenes/SubastaParticipadas.png)
 ### Metodología.
 
 En este proyecto pusimos en práctica la utilización de **la metodología Scrum** en la cual el equipo se reúne y planea lo que se realizará en los diferentes Sprint, la herramienta que se utilizo fue **Una hoja de excel para llevar los registros** la cual nos permite llevar un control de las historias de usuario y repartir las tareas entre los integrantes.
