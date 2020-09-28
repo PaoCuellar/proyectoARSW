@@ -38,7 +38,7 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://hidden-shore-7
 ### Mockups
 * Vista de la pagina de inicio 
   ![inicio](/Imagenes/Inicio.png)
-* Informacion del usuario
+* Vista Informacion general del usuario
   ![VistaUsuario](/Imagenes/VistaUsuario.png)
 * Agragar un articulo para subastar
   ![AgregarArticulo](/Imagenes/AgregarArticulo.png)
