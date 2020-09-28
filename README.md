@@ -20,8 +20,16 @@ Esta aplicación tiene como objetivo principal brindar a la comunidad una herram
 Permite a los usuarios publicar e interactuar activamente con las
 subastas; registrando ofertas, reacciones y comentarios, además de brindar
 la opción de poder visualizar los datos en gráficas, de tal manera que sean mucho más amenos al usuario.
-## Diagramas o imágenes de apoyo.
+## Diagramas de casos de uso:
+## Administrador
 
+![Diagrama de clases](/Diagramas/UC/CasosdeusoAdministrador.png)
+## Vendedor
+
+![Diagrama de clases](/Diagramas/UC/CasosdeusoVendedor.png)
+## Comprador
+
+![Diagrama de clases](/Diagramas/UC/CasosdeusoComprador.png)
 ## Historias de usuario.
 ## Enlace
 Podrá acceder a nuestro proyecto en el siguiente [link.](https://hidden-shore-73804.herokuapp.com/subastas)
@@ -34,6 +42,19 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://hidden-shore-7
 >- Permitir a los usuarios administradores modificar las subastas.
 >- Recibir notificaciones al vender un artículo.
 >- Permitir a los usuarios administradores modificar información de otros usuarios.
+# Diseño
+
+## Diagrama de Clases
+
+![Diagrama de clases](/Diagramas/ClassDiagram.png)
+
+## Diagrama de Componentes
+
+![Componentes](/Diagramas/ComponentDiagram.png)
+
+## Diagrama de Despliegue
+
+![Despliegue](/Diagramas/DeploymentDiagram.png)
 
 ### Mockups
 * Vista de la pagina de inicio 
