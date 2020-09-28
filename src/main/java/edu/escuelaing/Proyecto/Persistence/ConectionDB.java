@@ -5,16 +5,16 @@
  */
 package edu.escuelaing.Proyecto.Persistence;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
-import java.util.ArrayList;
-import java.util.Iterator;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 
 /**
  *
@@ -22,46 +22,30 @@ import java.util.Iterator;
  */
 public class ConectionDB {
     
-    private final MongoClientURI uri;
-    private final MongoClient mongoCl ;
-    private final DB database;
+     private static String url = "jdbc:postgresql://ec2-3-95-87-221.compute-1.amazonaws.com:5432/d2rnk26lvrnngg";
+    private static String user = "ywcvbeaxykzrvs";
+    private static String password = "a61b0a2fccd9cbfd39e3e70c050e872105fe5a0f71dd915a42067e65322ccaa0";
+    private static Connection con = null;
     
-    public ConectionDB() {
-        this.uri = new MongoClientURI("mongodb+srv://mongodb:MongoDB29@cluster0.cgjvc.mongodb.net/Temperatures?retryWrites=true&w=majority");
-        mongoCl = new MongoClient(uri);
-        database = mongoCl.getDB("Cluster0");
-        if (mongoCl!=null){
-            System.out.println("OK");
-        }
-        else{
-            System.out.println("FUCK");
-        }
-    }
-   
-    
-    
-    public void insert(String name, BasicDBObject document){
-        DBCollection collection = database.getCollection(name);
-	collection.insert(document);
-    }
-    public ArrayList getData(String name){
-        ArrayList<String> Data = new ArrayList<>();
-        DBCollection collection = database.getCollection(name);
-	Iterator<DBObject> cursor = collection.find().iterator();
-        DBObject it ;
-        
-        while (cursor.hasNext()){
-            Data.add(cursor.next().toString());
-        }
-        return Data;
+    public static void main(String[] args) throws ClassNotFoundException{
+         try {
+             Connection con = getConnection();
+             con.close();
+         } catch (URISyntaxException ex) {
+             Logger.getLogger(ConectionDB.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (SQLException ex) {
+             Logger.getLogger(ConectionDB.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
     
-    public void  dropColletion(String name){
-        DBCollection collection = database.getCollection(name);
-        collection.drop();
-    }
-    
-    public void Close(){
-        mongoCl.close();
+    private static Connection getConnection() throws URISyntaxException, SQLException, ClassNotFoundException {
+        Class.forName("org.postgresql.Driver");
+    //URI dbUri = new URI(System.getenv(ConectionDB.url));
+
+    //ConectionDB.user = dbUri.getUserInfo().split(":")[0];
+    //ConectionDB.password = dbUri.getUserInfo().split(":")[1];
+    //String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+
+    return (Connection) DriverManager.getConnection(ConectionDB.url, ConectionDB.user, ConectionDB.password);
     }
 }

@@ -1,8 +1,11 @@
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/model/User.java
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/controllers/ResourceNotFoundException.java
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/controllers/SubastaController.java
+/home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/Persistence/Persistence.java
+/home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/SubastaService.java
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/model/ExceptionModel.java
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/model/Subasta.java
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/Persistence/ConectionDB.java
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/model/Item.java
+/home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/Persistence/PersistenceService.java
 /home/diego/Universidad/ARSW/proyectoARSW/ProyectoSubasta/src/main/java/edu/escuelaing/Proyecto/AppSubastas.java

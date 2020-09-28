@@ -11,8 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {"edu.escuelaing.Proyecto"})
 public class AppSubastas {
-
+/*
     public static void main(String[] args) {
         SpringApplication.run(AppSubastas.class, args);
     }
+*/
 }

@@ -5,7 +5,7 @@
  */
 package edu.escuelaing.Proyecto.Persistence;
 
-import com.mongodb.BasicDBObject;
+
 import edu.escuelaing.Proyecto.model.Item;
 import edu.escuelaing.Proyecto.model.Subasta;
 import edu.escuelaing.Proyecto.model.User;
@@ -15,31 +15,20 @@ import edu.escuelaing.Proyecto.model.User;
  * @author diego
  */
 public class Persistence implements PersistenceService{
-    
-    ConectionDB CON;
-    public Persistence(){
-        this.CON = new ConectionDB();
-    }
-    
+
     @Override
     public void SaveUser(User user) {
-        BasicDBObject document = new BasicDBObject();
-        document.put(user.userName, user);
-        CON.insert("User", document);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void SaveItem(Item item) {
-        BasicDBObject document = new BasicDBObject();
-        document.put(item.id, item);
-        CON.insert("Item", document);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void SaveSubasta(Subasta subasta) {
-        BasicDBObject document = new BasicDBObject();
-        document.put(subasta.id, subasta);
-        CON.insert("Subasta", document);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
