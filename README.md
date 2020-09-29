@@ -6,6 +6,10 @@
 >- Nicolás Ortega Limas
 >- Diego Chinchilla
 
+
+      
+      
+
 ## Roles:
 |     Nombre    |     Rol         |
 |:--------------:|:-------------: |
@@ -32,7 +36,7 @@ la opción de poder visualizar los datos en gráficas, de tal manera que sean mu
 ![Diagrama de clases](/Diagramas/UC/CasosdeusoComprador.png)
 ## Historias de usuario.
 ## Enlace
-Podrá acceder a nuestro proyecto en el siguiente [link.](https://hidden-shore-73804.herokuapp.com/subastas)
+Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa.herokuapp.com/subastas)
 
 ## Funcionalidades más importantes:
 >- Permitir al usuario un inicio de sesión que corresponda con su información.
