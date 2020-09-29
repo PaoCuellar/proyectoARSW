@@ -1,11 +1,11 @@
-edu/escuelaing/Proyecto/Persistence/Persistence.class
 edu/escuelaing/Proyecto/SubastaService.class
-edu/escuelaing/Proyecto/controllers/SubastaController.class
-edu/escuelaing/Proyecto/Persistence/PersistenceService.class
-edu/escuelaing/Proyecto/model/ExceptionModel.class
-edu/escuelaing/Proyecto/model/User.class
 edu/escuelaing/Proyecto/AppSubastas.class
 edu/escuelaing/Proyecto/model/Item.class
 edu/escuelaing/Proyecto/Persistence/ConectionDB.class
-edu/escuelaing/Proyecto/model/Subasta.class
 edu/escuelaing/Proyecto/controllers/ResourceNotFoundException.class
+edu/escuelaing/Proyecto/Persistence/Persistence.class
+edu/escuelaing/Proyecto/controllers/SubastaController.class
+edu/escuelaing/Proyecto/Persistence/PersistenceService.class
+edu/escuelaing/Proyecto/model/ExceptionModel.class
+edu/escuelaing/Proyecto/model/Subasta.class
+edu/escuelaing/Proyecto/model/User.class
