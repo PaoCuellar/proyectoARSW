@@ -6,7 +6,6 @@
 >- Nicolás Ortega Limas
 >- Diego Chinchilla
 
-
       
       
 
@@ -25,6 +24,7 @@ Permite a los usuarios publicar e interactuar activamente con las
 subastas; registrando ofertas, reacciones y comentarios, además de brindar
 la opción de poder visualizar los datos en gráficas, de tal manera que sean mucho más amenos al usuario.
 ## Diagramas de casos de uso:
+
 ## Administrador
 
 ![Diagrama de clases](/Diagramas/UC/CasosdeusoAdministrador.png)
@@ -34,9 +34,12 @@ la opción de poder visualizar los datos en gráficas, de tal manera que sean mu
 ## Comprador
 
 ![Diagrama de clases](/Diagramas/UC/CasosdeusoComprador.png)
-## Historias de usuario.
+## Historias de usuario
+
+Podrás consultar las historias de usuario en el siguiente [link.](https://dinipa.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=SUB&selectedIssue=SUB-4)
+
 ## Enlace
-Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa.herokuapp.com/subastas)
+Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa.herokuapp.com)
 
 ## Funcionalidades más importantes:
 >- Permitir al usuario un inicio de sesión que corresponda con su información.
@@ -83,3 +86,4 @@ Al finalizar cada Sprint, el equipo se reúne para planear el siguiente y se com
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/66413a0ec2734ce6b0ae2e8a9271ffbc)](https://www.codacy.com/manual/PaoCuellar/proyectoARSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PaoCuellar/proyectoARSW&amp;utm_campaign=Badge_Grade)
 [![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
+[Heroku](https://dashboard.heroku.com/apps) [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://subastasdinipa.herokuapp.com)
