@@ -5,13 +5,13 @@
  */
 package edu.escuelaing.Proyecto.Persistence;
 
-import edu.escuelaing.Proyecto.model.User;
+import edu.escuelaing.Proyecto.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author diego
  */
-public interface UserPersistence  extends JpaRepository<User, Long>{
+public interface UserPersistence  extends JpaRepository<Usuario, Long>{
     
 }

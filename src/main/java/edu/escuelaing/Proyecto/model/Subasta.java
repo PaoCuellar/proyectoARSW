@@ -25,21 +25,23 @@ public class Subasta {
     @Id
     @GeneratedValue
     @Column(name="publish_id")
-    private final Long id;
+    private  Long id;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="publish_id", referencedColumnName = "product_id")
-    private final Item item; //Item que se va a subastar
+    @JoinColumn(name="item", referencedColumnName = "product_id")
+    private  Item item; //Item que se va a subastar
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="publish_id", referencedColumnName = "user_id")
-    private User user; //Usuario que esta subastando el item
+    @JoinColumn(name="usuario", referencedColumnName = "user_id")
+    private Usuario user; //Usuario que esta subastando el item
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="publish_id", referencedColumnName = "user_id")
-    private User userWinning; //Usuario que esta subastando el item
-    @Column(name="highestBit")
+    @JoinColumn(name="userWinning", referencedColumnName = "user_id")
+    private Usuario userWinning; //Usuario que esta subastando el item
+    @Column(name="highestPush")
     public Long highestPush; // Puja mas alta hasta el momento si no hay niguna el valor es cero y se la subasta se marca como fallida
     //image
     
-    public Subasta(Long id, Item item, User user){
+    public Subasta(){};
+    
+    public Subasta(Long id, Item item, Usuario user){
         this.id = id;
         this.item = item;
         this.user = user;
@@ -63,7 +65,7 @@ public class Subasta {
         return this.item;
     }
     
-    public User getUser(){
+    public Usuario getUser(){
         return this.user;
     }
     
@@ -75,7 +77,7 @@ public class Subasta {
         return this.highestPush;
     }
     
-    private void setuser(User user){
+    private void setuser(Usuario user){
         this.user = user;
     }
     

@@ -19,7 +19,7 @@ import javax.persistence.Table;
  * @author diego
  */
 @Entity
-@Table(name="producto")
+@Table(name="item")
 public class Item {
     @Id
     @GeneratedValue
@@ -37,9 +37,13 @@ public class Item {
     public String name;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="product_id", referencedColumnName = "category_id")
-    private final Categoria categoria;
+    private  Categoria categoria;
     
-    public Item(Long id, String name, String description,Long hopedPrice,User user,Categoria categoria){
+    
+    public Item(){};
+    
+    
+    public Item(Long id, String name, String description,Long hopedPrice,Usuario user,Categoria categoria){
         this.id = id;
         this.name = name;
         this.description = description;

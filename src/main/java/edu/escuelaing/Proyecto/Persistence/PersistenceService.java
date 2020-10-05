@@ -13,7 +13,7 @@ import edu.escuelaing.Proyecto.model.*;
  */
 public interface PersistenceService {
     
-    public void SaveUser(User user);
+    public void SaveUser(Usuario user);
     
     public void SaveItem(Item item);
     

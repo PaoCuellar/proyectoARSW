@@ -21,14 +21,13 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(
-   name = "Usuario", 
-   uniqueConstraints = {@UniqueConstraint(columnNames = {"user_userName"})}
-)
-public class User {
+   name = "usuario", 
+   uniqueConstraints = {@UniqueConstraint(columnNames = {"user_userName"})})
+public class Usuario {
     @Id
     @GeneratedValue
     @Column(name="user_id")
-    private final Long id;
+    private  Long id;
     @Column(name="user_userName")
     private  String userName;
     @Column(name="user_name")
@@ -36,7 +35,11 @@ public class User {
     @Column(name="user_phone")
     private  String phone;
     @Column(name="user_email")
-    private final String Email;
+    private  String Email;
+    @Column(name="password")
+    private  String password;
+    @Column (name="ciudad")
+    private String ciudad;
     @OneToMany
     @JoinColumn(name="articuloPublished_id")
     public List<Item> Items;
@@ -44,12 +47,16 @@ public class User {
     @JoinColumn(name="articuloPushed_id")
     public List<Item> ItemsPushed;
     
-    public User (Long id,String name,String userName, String phone, String Email){
+    public Usuario(){};
+    
+    public Usuario (Long id,String name,String passwd, String userName, String phone, String Email, String ciudad){
         this.id = id;
         this.name = name;
+        this.password = passwd;
         this.userName = userName;
         this.phone = phone;
-        this.Email = Email;        
+        this.Email = Email; 
+        this.ciudad = ciudad;
     }
     
     public void addItemPublished(Item item){
@@ -76,6 +83,10 @@ public class User {
         this.phone = phone;
     }
     
+    public void setCiudad(String ciudad){
+        this.ciudad = ciudad;
+    }
+    
     
     public Long getId(){
         return this.id;
@@ -96,11 +107,19 @@ public class User {
         return this.Email;
     }
     
+    public String getCiudad(){
+        return this.ciudad;
+    }
+    
     public List<Item> getItems(){
         return this.Items;
     }
     
     public List<Item> getPushedItems(){
         return this.ItemsPushed;
-    }  
+    }
+    
+    public boolean comparePasswd(String passwd){
+        return this.password.equals(passwd);
+    }
 }

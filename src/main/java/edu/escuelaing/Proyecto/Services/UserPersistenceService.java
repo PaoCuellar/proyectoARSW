@@ -7,7 +7,7 @@ package edu.escuelaing.Proyecto.Services;
 
 import edu.escuelaing.Proyecto.Persistence.UserPersistence;
 import edu.escuelaing.Proyecto.model.Item;
-import edu.escuelaing.Proyecto.model.User;
+import edu.escuelaing.Proyecto.model.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,39 +24,39 @@ public class UserPersistenceService {
     @Autowired
     UserPersistence service;
 
-    public User findById(Long id){
+    public Usuario findById(Long id){
         return service.getOne(id);
     }
     
-    public User findByUserName(String name){
-        ArrayList<User> users = (ArrayList<User>) getAll();
-        User Resp = null;
-        for (User user: users){
-            if(user.getUserName().equals(name)){
-                Resp = user;
+    public Usuario findByUsuarioName(String name){
+        ArrayList<Usuario> Usuarios = (ArrayList<Usuario>) getAll();
+        Usuario Resp = null;
+        for (Usuario Usuario: Usuarios){
+            if(Usuario.getUserName().equals(name)){
+                Resp = Usuario;
                 break;
             }
         }
         return Resp;
     }
     
-    public List<User> getAll(){
+    public List<Usuario> getAll(){
         return service.findAll();
     }
     
-    public void create(User user){
-        service.save(user);
+    public void create(Usuario Usuario){
+        service.save(Usuario);
     }
     
-    public List<Item> getUserProductsPublished(Long id){
+    public List<Item> getUsuarioProductsPublished(Long id){
         return findById(id).getItems();
     }
     
-    public void update(User user){
-        User UserToUpdate = service.getOne(user.getId());
-        user.setName(UserToUpdate.getName());
-        user.setPhone(UserToUpdate.getPhone());
-        user.setUserName(UserToUpdate.getUserName());
+    public void update(Usuario Usuario){
+        Usuario UsuarioToUpdate = service.getOne(Usuario.getId());
+        Usuario.setName(UsuarioToUpdate.getName());
+        Usuario.setPhone(UsuarioToUpdate.getPhone());
+        Usuario.setUserName(UsuarioToUpdate.getUserName());
     }
     
     public void delete(Long id){

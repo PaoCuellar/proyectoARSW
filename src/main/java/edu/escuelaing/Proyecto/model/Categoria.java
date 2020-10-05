@@ -21,9 +21,11 @@ public class Categoria {
     @Id
     @GeneratedValue
     @Column(name="category_id")
-    private final Long id;
+    private  Long id;
     @Column(name = "category")
-    public final String categoria;
+    public  String categoria;
+    
+    public Categoria(){};
     
     public Categoria(Long id , String categoria){
         this.id = id;
