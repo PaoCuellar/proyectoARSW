@@ -38,6 +38,7 @@ public class SubastaController {
     public ResponseEntity<?> getLoginUser(@PathVariable String user,@PathVariable String passwd){
         UserService.userLogin(user, passwd);
         Usuario usuario = UserService.findByUsuarioName(user);
+        System.out.println(user+" "+passwd+" "+usuario.getUserName());
         return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
     }
     
