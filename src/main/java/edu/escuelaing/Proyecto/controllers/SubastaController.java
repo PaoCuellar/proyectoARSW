@@ -11,6 +11,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,6 +32,13 @@ public class SubastaController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> manejadorGetRecursoXX() throws ResourceNotFoundException{
         return new ResponseEntity<>("Hola aqui implementaremos el servicio de subasta muy pronto.", HttpStatus.ACCEPTED);
+    }
+    
+    @GetMapping("/{user}/{passwd}")
+    public ResponseEntity<?> getLoginUser(@PathVariable String user,@PathVariable String passwd){
+        UserService.userLogin(user, passwd);
+        Usuario usuario = UserService.findByUsuarioName(user);
+        return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
     }
     
     @RequestMapping(method = RequestMethod.POST)

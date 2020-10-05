@@ -5,7 +5,6 @@
  */
 package edu.escuelaing.Proyecto.model;
 
-import java.util.ArrayList;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
