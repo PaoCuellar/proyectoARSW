@@ -16,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserPersistence  extends JpaRepository<Usuario, Long>{
-    User findByUserName(String userName);
+    Usuario findByUserName(String userName);
 }

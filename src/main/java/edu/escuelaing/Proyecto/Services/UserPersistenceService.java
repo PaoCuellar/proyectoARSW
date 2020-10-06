@@ -6,6 +6,7 @@
 package edu.escuelaing.Proyecto.Services;
 
 import edu.escuelaing.Proyecto.Persistence.UserPersistence;
+import edu.escuelaing.Proyecto.model.Credenciales;
 import edu.escuelaing.Proyecto.model.Item;
 import edu.escuelaing.Proyecto.model.Usuario;
 import java.util.ArrayList;
@@ -43,7 +44,14 @@ public class UserPersistenceService {
     
     
     public boolean userLogin(String user, String passwd){
-        return service.findByUserName(user).getPassword().equals(passwd) ;
+    	
+    	System.out.println(service.findByUserName(user));
+        return service.findByUserName(user).comparePasswd(passwd);
+    }
+    
+    public boolean login (Credenciales c) {
+    	Usuario u=service.findByUserName(c.getUsuario());
+    	return u.comparePasswd(c.getPasswd());
     }
     
     
@@ -57,5 +65,11 @@ public class UserPersistenceService {
     public void delete(Long id){
         service.deleteById(id);
     }
+
+
+	public Usuario findByUserName(String user) {
+			Usuario res = service.findByUserName(user);
+		return res;
+	}
 
 }

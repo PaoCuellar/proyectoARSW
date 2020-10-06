@@ -6,13 +6,19 @@
 package edu.escuelaing.Proyecto.controllers;
 
 import edu.escuelaing.Proyecto.Services.UserPersistenceService;
+import edu.escuelaing.Proyecto.model.Credenciales;
 import edu.escuelaing.Proyecto.model.Usuario;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,10 +35,6 @@ public class SubastaController {
     @Autowired
     UserPersistenceService UserService;
     
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<?> manejadorGetRecursoXX() throws ResourceNotFoundException{
-        return new ResponseEntity<>("Hola aqui implementaremos el servicio de subasta muy pronto.", HttpStatus.ACCEPTED);
-    }
     
     @GetMapping("/{user}/{passwd}")
     public ResponseEntity<?> getLoginUser(@PathVariable String user,@PathVariable String passwd){
@@ -41,6 +43,20 @@ public class SubastaController {
         System.out.println(user+" "+passwd+" "+usuario.getUserName());
         return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
     }
+    
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody Credenciales c){
+    	try {
+	 		return new ResponseEntity<>(UserService.login(c), HttpStatus.OK);
+	 	} catch (Exception ex) {
+	 		Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
+	 		return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+	 	}
+    }
+    
+    
+    
+
     
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addNewClient(@RequestBody String client){
