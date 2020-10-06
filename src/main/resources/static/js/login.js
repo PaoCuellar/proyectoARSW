@@ -6,7 +6,7 @@ $(document).ready(function() {
 			})
 		$.ajax({
 		  type: "POST",
-		  url: "localhost:8080/subastas/login",
+		  url: "https://localhost:8080/subastas/login",
 		  data: JSON.stringify({
 			"usuario": $("#idUsuario").val(),
 			"passwd":$("#passwd").val()
