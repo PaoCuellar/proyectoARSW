@@ -6,7 +6,7 @@ $(document).ready(function() {
 			})
 		$.ajax({
 		  type: "POST",
-		  url: "https://localhost:8080/subastas/login",
+		  url: "https://subastasdinipa.herokuapp.com/subastas/login",
 		  data: JSON.stringify({
 			"usuario": $("#idUsuario").val(),
 			"passwd":$("#passwd").val()
