@@ -1665,7 +1665,7 @@ div.register-bottom-grid {
 	font-size:0.8125em;
 	padding:10px;
 }
-.login-right input[type="submit"] {
+#loginButton {
 	background:#df1f26;
 	color: #FFF;
 	font-size: 0.8em;
@@ -1674,7 +1674,6 @@ div.register-bottom-grid {
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
-	display: inline-block;
 	text-transform: uppercase;
 	border:none;
 	outline:none;
