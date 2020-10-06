@@ -52,6 +52,10 @@ public class UserPersistenceService {
         return findById(id).getItems();
     }
     
+    public boolean userLogin(String user, String passwd){
+        return findByUsuarioName(user).comparePasswd(passwd);
+    }
+    
     public void update(Usuario Usuario){
         Usuario UsuarioToUpdate = service.getOne(Usuario.getId());
         Usuario.setName(UsuarioToUpdate.getName());
