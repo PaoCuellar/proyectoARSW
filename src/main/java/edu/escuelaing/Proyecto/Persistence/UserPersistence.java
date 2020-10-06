@@ -6,12 +6,15 @@
 package edu.escuelaing.Proyecto.Persistence;
 
 import edu.escuelaing.Proyecto.model.Usuario;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author diego
  */
+@Repository
 public interface UserPersistence  extends JpaRepository<Usuario, Long>{
-    
+    User findByUserName(String userName);
 }

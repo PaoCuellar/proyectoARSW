@@ -28,17 +28,6 @@ public class UserPersistenceService {
         return service.getOne(id);
     }
     
-    public Usuario findByUsuarioName(String name){
-        ArrayList<Usuario> Usuarios = (ArrayList<Usuario>) getAll();
-        Usuario Resp = null;
-        for (Usuario Usuario: Usuarios){
-            if(Usuario.getUserName().equals(name)){
-                Resp = Usuario;
-                break;
-            }
-        }
-        return Resp;
-    }
     
     public List<Usuario> getAll(){
         return service.findAll();
@@ -52,9 +41,11 @@ public class UserPersistenceService {
         return findById(id).getItems();
     }
     
+    
     public boolean userLogin(String user, String passwd){
-        return findByUsuarioName(user).comparePasswd(passwd);
+        return service.findByUserName(user).getPassword().equals(passwd) ;
     }
+    
     
     public void update(Usuario Usuario){
         Usuario UsuarioToUpdate = service.getOne(Usuario.getId());
