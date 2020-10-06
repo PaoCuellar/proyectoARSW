@@ -17,6 +17,7 @@ $(document).ready(function() {
 				alert("Login")
 			},
 			error: function(err){
+				console.log(err);
 				alert("Error login")
 			}
 		});
