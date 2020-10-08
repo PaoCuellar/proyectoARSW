@@ -7,7 +7,7 @@ $(document).ready(function() {
 			$(this).addClass("parent");
 		};
 	})
-	
+    
 	$(".toggleMenu").click(function(e) {
 		e.preventDefault();
 		$(this).toggleClass("active");
@@ -46,5 +46,14 @@ var adjustMenu = function() {
 		 	$(this).toggleClass('hover');
 		});
 	}
+    var loginvar = localStorage.getItem("login")
+    if (loginvar){
+        $(".showlogin").each((index,element) => {$(element).show()})
+        $(".hidlogin").each((index,element) => {$(element).hide()})
+    }
+    else{
+        $(".showlogin").each((index,element) => {$(element).hide()})
+        $(".hidlogin").each((index,element) => {$(element).show()})
+    }
 }
 

@@ -55,13 +55,29 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa
 
 ![Diagrama de clases](/Diagramas/ClassDiagram.jpeg)
 
+## Diagrama de Clases controllers
+
+![Diagrama de clases](/Diagramas/controllers.jpeg)
+
+## Diagrama de Clases services
+
+![Diagrama de clases](/Diagramas/services.jpeg)
+
+## Diagrama de Clases model
+
+![Diagrama de clases](/Diagramas/model.jpeg)
+
+## Diagrama de Clases persistence
+
+![Diagrama de clases](/Diagramas/persistence.jpeg)
+
 ## Diagrama de Componentes
 
-![Componentes](/Diagramas/ComponentDiagram.png)
+![Componentes](/Diagramas/ComponentDiagram.jpeg)
 
 ## Diagrama de Despliegue
 
-![Despliegue](/Diagramas/DeploymentDiagram.png)
+![Despliegue](/Diagramas/DeploymentDiagram.jpeg)
 
 ## Diagrama de Base de Datos
 

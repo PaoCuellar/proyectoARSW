@@ -14,12 +14,12 @@ $(document).ready(function() {
 			dataType: "json",
 			contentType: "application/json;charset=UTF-8",
 		  success: function(res) {
-				alert("Login")
+                localStorage.setItem("login",true)
+                window.location.href="/index.html"
 			},
-			error: function(err){
-				console.log(err);
-				alert("Error login")
-			}
+			error: function(xhr, status, error) {
+              alert(xhr.responseText);
+            }
 		});
 	});
 
