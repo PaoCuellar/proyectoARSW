@@ -25,7 +25,6 @@ import javax.persistence.UniqueConstraint;
    uniqueConstraints = {@UniqueConstraint(columnNames = {"user_userName"})})
 public class Usuario {
     @Id
-    @GeneratedValue
     @Column(name="user_id")
     private  Long id;
     @Column(name="user_userName")
