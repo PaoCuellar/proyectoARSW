@@ -13,6 +13,11 @@ $(document).ready(function() {
 		$(this).toggleClass("active");
 		$(".nav").toggle();
 	});
+    
+    $("#logout").click(function(){
+        localStorage.removeItem("login")
+        window.location.href="/index.html"
+    })
 	adjustMenu();
 })
 

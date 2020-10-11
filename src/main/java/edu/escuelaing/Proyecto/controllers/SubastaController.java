@@ -57,10 +57,17 @@ public class SubastaController {
 	 	}
     }
     
-    
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody Usuario u){
+        try {
+            return new ResponseEntity<>(UserService.create(u), HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("No se pudo registrar", HttpStatus.NOT_FOUND);
+        }
+    }
     
 
-    
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addNewClient(@RequestBody String client){
         JSONObject jsonObject = new JSONObject(client);

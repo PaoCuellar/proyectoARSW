@@ -16,6 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--webfont-->
 <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src ="js/register.js"></script>
 </head>
 <body>
 <div class="header">
@@ -26,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<ul class="shopping_grid">
 			      <a href="login.html" class="hidlogin"><li>Unirse</li></a>
+                <a href="#" class="showlogin" id="logout"><li>Salir</li></a>
 			      <a href="register.html" class="hidlogin"><li>Registrar</li></a>
 			      <a href="404.html" class="showlogin"><li><span class="m_1">Bolsa de compras</span>&nbsp;&nbsp;(0) &nbsp;<img src="images/bag.png" alt=""/></li></a>
 			      <div class="clearfix"> </div>
@@ -40,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li class="active"><a href="index.html" data-hover="Home">Principal</a></li>
 					<li><a href="about.html" data-hover="About Us">Nosotros</a></li>
 					<li><a href="contact.html" data-hover="Contact Us">Contacto</a></li>
-					<li><a href="register.html" data-hover="Company Registration">Registro</a></li>
+					<li><a href="register.html" data-hover="Company Registration" class="hidlogin">Registro</a></li>
 					<li><a href="404.html" data-hover="Wish List" class="showlogin">Deseados</a></li>
                     <li><a href="createproducto.html" data-hover="Wish List" class="showlogin"> Publica un producto </a></li>
 				 </ul>
@@ -69,33 +71,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>INFORMACIÓN PERSONAL</h3>
 					 <div>
 						<span>Nombre y Apellido <label>*</label></span>
-						<input type="text"> 
-					 </div>
-					 <div>
-						 <span>Correo electrónico <label>*</label></span>
-						 <input type="email"> 
-					 </div>
-                     <div>
-						<span> Número de celular <label>*</label></span>
-						<input type="text"> 
-					 </div>
-                     <div>
-						<span>Ciudad <label>*</label></span>
-						<input type="text"> 
+						<input id="nombrereg" type="text"> 
 					 </div>
                      <div>
 						<span>Identificación <label>*</label></span>
-						<input type="text"> 
+						<input id="identificacionreg" type="text"> 
+					 </div>
+					 <div>
+						 <span>Correo electrónico <label>*</label></span>
+						 <input id="correoreg" type="email"> 
+					 </div>
+                     <div>
+						<span> Número de celular <label>*</label></span>
+						<input id="celreg" type="text"> 
+					 </div>
+                     <div>
+						<span>Ciudad <label>*</label></span>
+						<input id="ciudadreg" type="text"> 
+					 </div>
+                     
+					 <div class="clearfix"> </div>
+					   <a class="news-letter" href="#">
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Recibir notificaciones</label>
+					   </a>
 					 </div>
 				     <div class="register-bottom-grid">
 						    <h3>INFORMACIÓN DE INGRESO</h3>
                              <div>
-                                <span>Nombre de Usuario <label>*</label></span>
-                                <input type="text"> 
+                                <span> Nombre de usuario <label>*</label></span>
+                                <input id="usuarioreg" type="text"> 
                              </div>
 							 <div>
 								<span>Contraseña <label>*</label></span>
-								<input type="password">
+								<input id= "passwdreg"type="password">
 							 </div>
 							 <div class="clearfix"> </div>
 					 </div>
@@ -103,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 				<div class="register-but">
 				   <form>
-					   <input type="submit" value="enviar">
+					   <input type="button" id="registerbutton" value="enviar">
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>

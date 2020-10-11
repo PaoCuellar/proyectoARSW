@@ -34,8 +34,8 @@ public class UserPersistenceService {
         return service.findAll();
     }
     
-    public void create(Usuario Usuario){
-        service.save(Usuario);
+    public Usuario create(Usuario Usuario){
+        return service.save(Usuario);
     }
     
     public List<Item> getUsuarioProductsPublished(Long id){

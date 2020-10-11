@@ -1,9 +1,5 @@
 $(document).ready(function() {
 	$("#loginButton").click(function(){
-		console.log( {
-			"usuario": $("#idUsuario").val(),
-			"passwd":$("#passwd").val()
-			})
 		$.ajax({
 		  type: "POST",
 		  url: "https://subastasdinipa.herokuapp.com/subastas/login",
@@ -22,5 +18,4 @@ $(document).ready(function() {
             }
 		});
 	});
-
 })

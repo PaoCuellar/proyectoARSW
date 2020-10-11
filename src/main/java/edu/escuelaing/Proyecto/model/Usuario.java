@@ -35,7 +35,7 @@ public class Usuario {
     @Column(name="user_phone")
     private  String phone;
     @Column(name="user_email")
-    private  String Email;
+    private  String email;
     @Column(name="password")
     private  String password;
     @Column (name="ciudad")
@@ -49,13 +49,13 @@ public class Usuario {
     
     public Usuario(){};
     
-    public Usuario (Long id,String name,String passwd, String userName, String phone, String Email, String ciudad){
+    public Usuario (Long id,String name,String passwd, String userName, String phone, String email, String ciudad){
         this.id = id;
         this.name = name;
         this.password = passwd;
         this.userName = userName;
         this.phone = phone;
-        this.Email = Email; 
+        this.email = email; 
         this.ciudad = ciudad;
     }
     
@@ -75,10 +75,6 @@ public class Usuario {
         this.userName = userName;
     }
     
-    public void setname(String name){
-        this.name = name;
-    }
-    
     public void setPhone(String phone){
         this.phone = phone;
     }
@@ -87,6 +83,17 @@ public class Usuario {
         this.ciudad = ciudad;
     }
     
+    public void setPassword(String passwd){
+        this.password = passwd;
+    }
+
+    public void setId (long id){
+        this.id = id;
+    }
+
+    public void setEmail (String email){
+        this.email = email;
+    }
     
     public Long getId(){
         return this.id;
@@ -104,7 +111,7 @@ public class Usuario {
     }
     
     public String getEmail(){
-        return this.Email;
+        return this.email;
     }
     
     public String getCiudad(){
