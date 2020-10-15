@@ -23,13 +23,36 @@ public class Categoria {
     @Column(name="category_id")
     private  Long id;
     @Column(name = "category")
-    public  String categoria;
+    public  String category;
+    @Column(name = "description")
+    public String description;
     
     public Categoria(){};
     
-    public Categoria(Long id , String categoria){
+    public Categoria(Long id , String category, String description){
         this.id = id;
-        this.categoria = categoria;
+        this.category = category;
+        this.description = description;
+    }
+
+    public Long getId(){
+        return this.id;
+    }
+
+    public String getCategory(){
+        return this.category;
+    }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public void setCategory(String cate){
+        this.category = cate;
+    }
+
+    public void setDescription(String descri){
+        this.description = descri;
     }
     
 }

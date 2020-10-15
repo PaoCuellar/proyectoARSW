@@ -1697,6 +1697,20 @@ p.cart {
 	line-height: 1.8em;
 	font: 300 16px/25px Lato, sans-serif;
 }
+/*--createproduct--*/
+#publicproduc {
+	background:#df1f26;
+	color: #FFF;
+	font-size: 0.8em;
+	padding: 0.7em 1.2em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	text-transform: uppercase;
+	border:none;
+	outline:none;
+}
 /*--responsive design--*/
 @media(max-width:1366px){
 .banner_desc h1 {

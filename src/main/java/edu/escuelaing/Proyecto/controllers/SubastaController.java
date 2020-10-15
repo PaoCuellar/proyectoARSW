@@ -6,8 +6,10 @@
 package edu.escuelaing.Proyecto.controllers;
 
 import edu.escuelaing.Proyecto.Services.UserPersistenceService;
+import edu.escuelaing.Proyecto.Services.ItemPersistenceService;
 import edu.escuelaing.Proyecto.model.Credenciales;
 import edu.escuelaing.Proyecto.model.Usuario;
+import edu.escuelaing.Proyecto.model.Item;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,6 +39,9 @@ public class SubastaController {
     
     @Autowired
     UserPersistenceService UserService;
+
+    @Autowired
+    ItemPersistenceService ItemService;
     
     
     @GetMapping("/{user}/{passwd}")
@@ -67,7 +72,17 @@ public class SubastaController {
         }
     }
     
+    @PostMapping("/createItem")
+    public ResponseEntity<?> createItem(@RequestBody Item item){
+        try {
+            return new ResponseEntity<>(ItemService.create(item), HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("No se pudo agregar item", HttpStatus.NOT_FOUND);
+        }
+    }
 
+//se puede borrar...
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addNewClient(@RequestBody String client){
         JSONObject jsonObject = new JSONObject(client);

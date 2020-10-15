@@ -29,8 +29,8 @@ public class ItemPersistenceService {
         return service.findAll();
     }
     
-    public void create(Item Item){
-        service.save(Item);
+    public Item create(Item Item){
+        return service.save(Item);
     }
     
     public void update(Item item){
@@ -39,6 +39,7 @@ public class ItemPersistenceService {
         item.setPriceSold(ItemToUpdate.getPriceSold());
         item.setHopedPrice(ItemToUpdate.getHopedPrice());
         item.setDescription(ItemToUpdate.getDescription());
+        item.setDate(ItemToUpdate.getDate());
     }
     
     public void delete(Long id){

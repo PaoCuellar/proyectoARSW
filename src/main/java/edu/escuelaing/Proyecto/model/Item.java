@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.Date;
 
 /**
  *
@@ -27,38 +28,29 @@ public class Item {
     public Long id;
     @Column(name="hopedPrice")
     private Long hopedPrice;
-    @Column(name="PriceSold")
-    private Long PriceSold;
+    @Column(name="priceSold")
+    private Long priceSold;
     @Column(name="sold")
     private boolean sold;
     @Column(name="desciption")
     public String description;
+    @Column(name="date")
+    public Date date;
     @Column(name="product_name")
     public String name;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="product_id", referencedColumnName = "category_id")
     private  Categoria categoria;
     
-    
     public Item(){};
     
-    
-    public Item(Long id, String name, String description,Long hopedPrice,Usuario user,Categoria categoria){
+    public Item(Long id, String name, String description,Long hopedPrice,Usuario user,Date date){
         this.id = id;
         this.name = name;
         this.description = description;
         this.hopedPrice = hopedPrice;
         this.sold = false;
-        this.categoria = categoria;
-        
-    }
-    
-    public void Sold(){
-        this.sold = true;
-    }
-    
-    public void PriceSold(Long price){
-        this.PriceSold = price;
+        this.date = date;  
     }
     
     public Long getId(){
@@ -78,7 +70,11 @@ public class Item {
     }
     
     public Long getPriceSold(){
-        return this.PriceSold;
+        return this.priceSold;
+    }
+
+    public Date getDate(){
+    	return this.date;
     }
     
     public void setName(String name){
@@ -94,9 +90,13 @@ public class Item {
     }
     
     public void setPriceSold(Long price){
-        this.PriceSold = price;
+        this.priceSold = price;
     }
     
+    public void setDate(Date date){
+    	this.date = date;
+    }
+
     public boolean isSold(){
         return this.sold;
     }

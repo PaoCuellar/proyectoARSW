@@ -15,6 +15,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--webfont-->
 <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src ="js/create.js"></script>
 </head>
 <body>
 <div class="header">
@@ -69,23 +70,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>INFORMACIÓN DEL PRODUCTO</h3>
 					 <div>
 						<span>Nombre <label>*</label></span>
-						<input type="text"> 
-					 </div>
-					 <div>
-						<span>Descripción <label>*</label></span>
-						<textarea value="Describe tu producto..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Descripción';}">Describe tu producto...</textarea>
+						<input id="productname" type="text"> 
 					 </div>
                      <div>
 						<span> Precio inicial <label>*</label></span>
-						<input type="text"> 
+						<input id="productprice" type="number"> 
 					 </div>
                      <div>
 						<span> Fecha limite <label>*</label></span>
-						<input type="date"> 
+						<input id="limitdate" type="date"> 
 					 </div>
 					 <div>
 						 <span>Categoría <label>*</label></span>
-						 <select name="categoria">
+						 <select id="productcategory" name="categoria">
                             <option selected="yes" >Antigüedades </option>
                             <option>Videojuegos </option>
                             <option>Para niños  </option>
@@ -95,12 +92,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span> Fotos <label>*</label></span>
 						<input type="file"> 
 					 </div>
+                     <div>
+						<span>Descripción <label>*</label></span>
+						<textarea id="productdescription" value="Describe tu producto..." onfocus="this.value = '';" rows="6" cols="85" onblur="if (this.value == '') {this.value = 'Descripción';}">Describe tu producto...</textarea>
+					 </div>
                   </div>
 				</form>
 				<div class="clearfix"> </div>
 				<div class="register-but">
 				   <form>
-					   <input type="submit" value="publicar">
+					   <input id="publicproduc" type="button" value="publicar">
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>
