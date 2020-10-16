@@ -20,7 +20,7 @@ $(document).ready(function() {
 			dataType: "json",
 			contentType: "application/json;charset=UTF-8",
 		  success: function(res) {
-                //window.location.href="/index.html"
+                window.location.href="/index.html"
 			},
 			error: function(xhr, status, error) {
               alert(xhr.responseText);
