@@ -3,6 +3,7 @@ $(document).ready(function() {
         console.log({
 			"name": $("#productname").val(),
 			"priceSold":$("#productprice").val(),
+            "hopedPrice":$("#productprice").val(),
             "date": $("#limitdate").val(),
 			"categoria":$("#productcategory").val(),
             "description": $("#productdescription").val(),
@@ -12,6 +13,7 @@ $(document).ready(function() {
 		  url: "https://subastasdinipa.herokuapp.com/subastas/createItem",
 		  data: JSON.stringify({
 			"name": $("#productname").val(),
+            "hopedPrice":$("#productprice").val(),
 			"priceSold":$("#productprice").val(),
             "date": $("#limitdate").val(),
             "categoria":{"categoria":$("#productcategory").val(),"descripcion":""},

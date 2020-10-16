@@ -49,6 +49,7 @@ public class Item {
         this.name = name;
         this.description = description;
         this.hopedPrice = hopedPrice;
+        this.priceSold = hopedPrice;
         this.sold = false;
         this.date = date;  
     }
