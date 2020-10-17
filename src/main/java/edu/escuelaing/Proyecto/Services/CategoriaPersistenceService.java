@@ -29,8 +29,8 @@ public class CategoriaPersistenceService {
         return service.findAll();
     }
     
-    public void create(Categoria Categoria){
-        service.save(Categoria);
+    public Categoria create(Categoria Categoria){
+        return service.save(Categoria);
     }
     
     public void delete(Long id){

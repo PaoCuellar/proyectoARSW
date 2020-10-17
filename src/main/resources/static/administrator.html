@@ -1,23 +1,20 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Fashionpress an E-Commerce online Shopping Category Flat Bootstarp responsive Website Template| Single :: w3layouts</title>
+<title>Subastas DINIPA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<!--webfont-->
 <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/hover_pack.js"></script>
 <link rel="stylesheet" href="css/etalage.css">
 <script src="js/jquery.etalage.min.js"></script>
+<script type="text/javascript" src ="js/createcategory.js"></script>
 <script>
 			jQuery(document).ready(function($){
 
@@ -38,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    <script type="text/javascript">
 			    $(document).ready(function () {
 			        $('#horizontalTab').easyResponsiveTabs({
-			            type: 'default', //Types: default, vertical, accordion           
+			            type: 'default', //Types: default, vertical, accordion      
 			            width: 'auto', //auto or any width like 600px
 			            fit: true   // 100% fit in a container
 			        });
@@ -118,6 +115,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
        </div>
 	   </div> 
+        <div class="newcategory">
+			   <div class="col-md-6 login-right">
+			  	<h3>Crea una nueva categoría</h3>
+				<form>
+				  <div>
+					<span>Nombre de categoría: <label>*</label></span>
+					<input id = "namecategory" type="text"> 
+				  </div>
+				  <div>
+						<span>Descripción <label>*</label></span>
+						<textarea id="categorydescription" value="Describe tu producto..." onfocus="this.value = '';" rows="6" cols="85" onblur="if (this.value == '') {this.value = 'Descripción';}">Describe tu producto...</textarea>
+					 </div>
+				  <input id="createCategoryButton" type="button" value="Crear">
+			    </form>
+			   </div>	
+			   <div class="clearfix"> </div>
+		</div>
 	   <div class="col-md-9 single_right">
           <div class="sap_tabs">	
 				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
