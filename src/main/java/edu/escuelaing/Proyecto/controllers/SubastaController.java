@@ -7,9 +7,11 @@ package edu.escuelaing.Proyecto.controllers;
 
 import edu.escuelaing.Proyecto.Services.UserPersistenceService;
 import edu.escuelaing.Proyecto.Services.ItemPersistenceService;
+import edu.escuelaing.Proyecto.Services.CategoriaPersistenceService;
 import edu.escuelaing.Proyecto.model.Credenciales;
 import edu.escuelaing.Proyecto.model.Usuario;
 import edu.escuelaing.Proyecto.model.Item;
+import edu.escuelaing.Proyecto.model.Categoria;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,6 +44,9 @@ public class SubastaController {
 
     @Autowired
     ItemPersistenceService ItemService;
+
+    @Autowired
+    CategoriaPersistenceService CategoryService;
     
     
     @GetMapping("/{user_Id}")
@@ -85,6 +90,16 @@ public class SubastaController {
         } catch (Exception ex) {
             Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>("No se pudo agregar item", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/createCategory")
+    public ResponseEntity<?> createCategory(@RequestBody Categoria categoria){
+        try {
+            return new ResponseEntity<>(CategoryService.create(categoria), HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("No se pudo agregar categoria", HttpStatus.NOT_FOUND);
         }
     }
 
