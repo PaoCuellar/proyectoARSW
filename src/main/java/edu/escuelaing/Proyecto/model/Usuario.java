@@ -6,11 +6,13 @@
 package edu.escuelaing.Proyecto.model;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -40,10 +42,16 @@ public class Usuario {
     @Column (name="ciudad")
     private String ciudad;
     @OneToMany
-    @JoinColumn(name="articuloPublished_id")
+    @JoinTable(
+            name="items_published",
+            joinColumns = @JoinColumn( name="client_ID"),
+            inverseJoinColumns = @JoinColumn( name="item_ID"))
     public List<Item> Items;
     @OneToMany
-    @JoinColumn(name="articuloPushed_id")
+    @JoinTable(
+            name="items_Pushed",
+            joinColumns = @JoinColumn( name="client_ID"),
+            inverseJoinColumns = @JoinColumn( name="item_ID"))
     public List<Item> ItemsPushed;
     
     public Usuario(){};

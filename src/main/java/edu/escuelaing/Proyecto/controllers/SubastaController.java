@@ -44,11 +44,9 @@ public class SubastaController {
     ItemPersistenceService ItemService;
     
     
-    @GetMapping("/{user}/{passwd}")
-    public ResponseEntity<?> getLoginUser(@PathVariable String user,@PathVariable String passwd){
-        UserService.userLogin(user, passwd);
-        Usuario usuario = UserService.findByUserName(user);
-        System.out.println(user+" "+passwd+" "+usuario.getUserName());
+    @GetMapping("/{user_Id}")
+    public ResponseEntity<?> getLoginUser(@PathVariable String user_Id){
+        Usuario usuario = UserService.findById(Long.parseLong(user_Id));
         return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
     }
     
@@ -75,7 +73,15 @@ public class SubastaController {
     @PostMapping("/createItem")
     public ResponseEntity<?> createItem(@RequestBody Item item){
         try {
-            return new ResponseEntity<>(ItemService.create(item), HttpStatus.OK);
+            Usuario user = UserService.findById(Long.parseLong("10191919"));
+            System.out.println("---------------------------------1----------------------------");
+            user.addItemPublished(item);
+            System.out.println("---------------------------------1----------------------------");
+            Item it = ItemService.create(item);
+            System.out.println("---------------------------------1----------------------------");
+            UserService.updateU(user);
+            System.out.println("---------------------------------1----------------------------");
+            return new ResponseEntity<>(it, HttpStatus.OK);
         } catch (Exception ex) {
             Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>("No se pudo agregar item", HttpStatus.NOT_FOUND);

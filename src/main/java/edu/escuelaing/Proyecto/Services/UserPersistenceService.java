@@ -9,7 +9,6 @@ import edu.escuelaing.Proyecto.Persistence.UserPersistence;
 import edu.escuelaing.Proyecto.model.Credenciales;
 import edu.escuelaing.Proyecto.model.Item;
 import edu.escuelaing.Proyecto.model.Usuario;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,7 @@ public class UserPersistenceService {
     UserPersistence service;
 
     public Usuario findById(Long id){
-        return service.getOne(id);
+        return service.findById(id).get();
     }
     
     
@@ -36,6 +35,9 @@ public class UserPersistenceService {
     
     public Usuario create(Usuario Usuario){
         return service.save(Usuario);
+    }
+    public void updateU(Usuario user){
+        service.save(user);
     }
     
     public List<Item> getUsuarioProductsPublished(Long id){

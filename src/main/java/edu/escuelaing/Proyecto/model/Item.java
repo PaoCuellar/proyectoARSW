@@ -23,7 +23,6 @@ import java.util.Date;
 @Table(name="item")
 public class Item {
     @Id
-    @GeneratedValue
     @Column(name="product_id")
     public Long id;
     @Column(name="hopedPrice")
