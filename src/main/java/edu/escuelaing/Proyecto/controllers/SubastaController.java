@@ -62,6 +62,34 @@ public class SubastaController {
         return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
     }
     
+    @GetMapping("/user/subastas")
+    public ResponseEntity<?> getUserSubastasPublished(@RequestBody String user_id){
+        JSONObject json = new JSONObject(user_id);
+        return new ResponseEntity<>(SubastaService.getSubastabyUser(Long.parseLong(json.getString("user_id"))),HttpStatus.ACCEPTED);
+    }
+    
+    
+    @GetMapping("/user/items")
+    public ResponseEntity<?> getUserItems(@RequestBody String user_id){
+        JSONObject json = new JSONObject(user_id);
+        return new ResponseEntity<>(UserService.findById(Long.parseLong(json.getString("user_id"))).getItems(),HttpStatus.ACCEPTED);
+    }
+    
+    @GetMapping("/user/item")
+    public ResponseEntity<?> getUserItem(@RequestBody String user_id){
+        JSONObject json = new JSONObject(user_id);
+        Usuario user = UserService.findById(Long.parseLong(json.getString("user_id")));
+        ItemService.getItembyUser(user, Long.parseLong(json.getString("item_id")));
+        return new ResponseEntity<>(ItemService.getItembyUser(user, Long.parseLong(json.getString("item_id"))) ,HttpStatus.ACCEPTED);
+    }
+    
+    @GetMapping("")
+    public ResponseEntity<?> getSubastas(){
+        return new ResponseEntity<>(SubastaService.getAll() ,HttpStatus.ACCEPTED);
+    }
+    
+    
+    
     @PostMapping("/createSubasta")
      public ResponseEntity<?> createSubasta(@RequestBody String data) throws ParseException{
          System.out.println(data);

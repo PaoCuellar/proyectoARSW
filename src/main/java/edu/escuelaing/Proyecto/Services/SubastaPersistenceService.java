@@ -8,6 +8,7 @@ package edu.escuelaing.Proyecto.Services;
 import edu.escuelaing.Proyecto.Persistence.SubastaPersistence;
 import edu.escuelaing.Proyecto.model.ExceptionModel;
 import edu.escuelaing.Proyecto.model.Subasta;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,5 +47,16 @@ public class SubastaPersistenceService {
     
     public void delete(Long id){
         service.deleteById(id);
+    }
+    
+    public List<Subasta> getSubastabyUser(Long userId){
+        List <Subasta> subastas = service.findAll();
+        List <Subasta> resp =  new ArrayList<>();
+        for (Subasta subasta: subastas){
+            if (subasta.getUser().getId().equals(userId)){
+                resp.add(subasta);
+            }
+        }
+        return resp;
     }
 }

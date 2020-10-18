@@ -7,6 +7,7 @@ package edu.escuelaing.Proyecto.Services;
 
 import edu.escuelaing.Proyecto.Persistence.ItemPersistence;
 import edu.escuelaing.Proyecto.model.Item;
+import edu.escuelaing.Proyecto.model.Usuario;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,16 @@ public class ItemPersistenceService {
     
     public void delete(Long id){
         service.deleteById(id);
+    }
+    
+    public Item getItembyUser(Usuario user, Long itemId){
+        Item resp = null;
+        for(Item item:user.getItems()){
+            if (item.getId().equals(itemId)){
+                resp = item;
+            }
+        }
+        return resp;
     }
 
 }
