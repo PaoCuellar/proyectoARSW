@@ -5,6 +5,7 @@
  */
 package edu.escuelaing.Proyecto.model;
 
+import java.sql.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +23,6 @@ import javax.persistence.Table;
 @Table(name="subasta")
 public class Subasta {
     @Id
-    @GeneratedValue
     @Column(name="publish_id")
     private  Long id;
     @OneToOne(cascade = CascadeType.ALL)
@@ -37,13 +37,20 @@ public class Subasta {
     @Column(name="highestPush")
     public Long highestPush; // Puja mas alta hasta el momento si no hay niguna el valor es cero y se la subasta se marca como fallida
     //image
+    @Column(name="fechaInicio")
+    public Date fechaInicio;
+    @Column(name="fechaFin")
+    public Date fechaFin;
     
     public Subasta(){};
     
-    public Subasta(Long id, Item item, Usuario user){
+    public Subasta(Long id, Item item, Usuario user, Date fechaInicio, Date fechaFin,Long highestPush){
         this.id = id;
         this.item = item;
         this.user = user;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.highestPush = highestPush;
     }
     
     

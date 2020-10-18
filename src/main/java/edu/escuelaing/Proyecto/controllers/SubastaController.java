@@ -8,10 +8,14 @@ package edu.escuelaing.Proyecto.controllers;
 import edu.escuelaing.Proyecto.Services.UserPersistenceService;
 import edu.escuelaing.Proyecto.Services.ItemPersistenceService;
 import edu.escuelaing.Proyecto.Services.CategoriaPersistenceService;
+import edu.escuelaing.Proyecto.Services.SubastaPersistenceService;
 import edu.escuelaing.Proyecto.model.Credenciales;
 import edu.escuelaing.Proyecto.model.Usuario;
 import edu.escuelaing.Proyecto.model.Item;
 import edu.escuelaing.Proyecto.model.Categoria;
+import edu.escuelaing.Proyecto.model.Subasta;
+import java.sql.Date;
+import java.time.LocalDate;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +23,6 @@ import java.util.logging.Logger;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,12 +51,27 @@ public class SubastaController {
     @Autowired
     CategoriaPersistenceService CategoryService;
     
+    @Autowired
+    SubastaPersistenceService SubastaService;
+    
     
     @GetMapping("/{user_Id}")
     public ResponseEntity<?> getLoginUser(@PathVariable String user_Id){
         Usuario usuario = UserService.findById(Long.parseLong(user_Id));
         return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
     }
+    
+    @PostMapping("/createSubasta")
+     public ResponseEntity<?> createSubasta(@RequestBody String data){
+         System.out.println(data);
+         JSONObject json = new JSONObject(data);
+         System.out.print(java.sql.Date.valueOf(LocalDate.MAX).toString());
+         Usuario user = UserService.findById(Long.parseLong(json.getString("user_id")));
+         Item it = ItemService.findById(Long.parseLong(json.getString("item_id")));
+         Subasta subasta = new Subasta(it.getId(),it,user,java.sql.Date.valueOf(json.getString("fechaInicio")), java.sql.Date.valueOf(json.getString("fechaFin")), Long.parseLong(json.getString("highestPush")));
+         SubastaService.create(subasta);
+         return new ResponseEntity<>(HttpStatus.CREATED);  
+     }
     
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Credenciales c){
@@ -75,17 +93,15 @@ public class SubastaController {
         }
     }
     
+    
+    
     @PostMapping("/createItem")
     public ResponseEntity<?> createItem(@RequestBody Item item){
         try {
             Usuario user = UserService.findById(Long.parseLong("10191919"));
-            System.out.println("---------------------------------1----------------------------");
             user.addItemPublished(item);
-            System.out.println("---------------------------------1----------------------------");
             Item it = ItemService.create(item);
-            System.out.println("---------------------------------1----------------------------");
             UserService.updateU(user);
-            System.out.println("---------------------------------1----------------------------");
             return new ResponseEntity<>(it, HttpStatus.OK);
         } catch (Exception ex) {
             Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);

@@ -52,7 +52,7 @@ public class Usuario {
             name="items_Pushed",
             joinColumns = @JoinColumn( name="client_ID"),
             inverseJoinColumns = @JoinColumn( name="item_ID"))
-    public List<Item> ItemsPushed;
+    public List<Subasta> SubastasPushed;
     
     public Usuario(){};
     
@@ -70,8 +70,8 @@ public class Usuario {
         this.Items.add(item);
     }
     
-    public void addItemPushed(Item item){
-        this.ItemsPushed.add(item);
+    public void addSubastaPushed(Subasta subasta){
+        this.SubastasPushed.add(subasta);
     }
     
     public void setName(String name){
@@ -129,8 +129,8 @@ public class Usuario {
         return this.Items;
     }
     
-    public List<Item> getPushedItems(){
-        return this.ItemsPushed;
+    public List<Subasta> getPushedSubastas(){
+        return this.SubastasPushed;
     }
     
     public boolean comparePasswd(String passwd){
