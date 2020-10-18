@@ -15,7 +15,8 @@ import edu.escuelaing.Proyecto.model.Item;
 import edu.escuelaing.Proyecto.model.Categoria;
 import edu.escuelaing.Proyecto.model.Subasta;
 import java.sql.Date;
-import java.time.LocalDate;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,13 +63,15 @@ public class SubastaController {
     }
     
     @PostMapping("/createSubasta")
-     public ResponseEntity<?> createSubasta(@RequestBody String data){
+     public ResponseEntity<?> createSubasta(@RequestBody String data) throws ParseException{
          System.out.println(data);
          JSONObject json = new JSONObject(data);
-         System.out.print(java.sql.Date.valueOf(LocalDate.MAX).toString());
+         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
          Usuario user = UserService.findById(Long.parseLong(json.getString("user_id")));
          Item it = ItemService.findById(Long.parseLong(json.getString("item_id")));
-         Subasta subasta = new Subasta(it.getId(),it,user,java.sql.Date.valueOf(json.getString("fechaInicio")), java.sql.Date.valueOf(json.getString("fechaFin")), Long.parseLong(json.getString("highestPush")));
+         Date dateInicio = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
+         Date dateFin = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
+         Subasta subasta = new Subasta(it.getId(),it,user,dateInicio, dateFin, Long.parseLong(json.getString("highestPush")));
          SubastaService.create(subasta);
          return new ResponseEntity<>(HttpStatus.CREATED);  
      }
