@@ -53,7 +53,6 @@ public class Subasta {
         this.highestPush = highestPush;
     }
     
-    
     public void changeHighestPush(Long newPush) throws ExceptionModel{
         if(newPush <= this.highestPush){
             throw new ExceptionModel("the value needs to be higher");
@@ -75,17 +74,40 @@ public class Subasta {
         return this.user;
     }
     
-    public Long getHishestPush(){
-        return this.highestPush;
-    }
-    
     public Long getHighestPush(){
         return this.highestPush;
     }
-    
-    private void setuser(Usuario user){
-        this.user = user;
+
+    public Date getFechaInicio(){
+        return this.fechaInicio;
     }
     
+    public Date getFechaFin(){
+        return this.fechaFin;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
+    }
+
+    public void setHighestPush(Long highestPush) {
+        this.highestPush = highestPush;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
+    }
     
 }

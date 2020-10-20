@@ -32,14 +32,14 @@ public class SubastaPersistenceService {
         return service.findAll();
     }
     
-    public void create(Subasta Subasta){
-        service.save(Subasta);
+    public Subasta create(Subasta Subasta){
+        return service.save(Subasta);
     }
     
     public void update(Subasta subasta){
         Subasta SubastaToUpdate = service.getOne(subasta.getId());
         try {
-            subasta.changeHighestPush(SubastaToUpdate.getHishestPush());
+            subasta.changeHighestPush(SubastaToUpdate.getHighestPush());
         } catch (ExceptionModel ex) {
             Logger.getLogger(SubastaPersistenceService.class.getName()).log(Level.SEVERE, null, ex);
         }

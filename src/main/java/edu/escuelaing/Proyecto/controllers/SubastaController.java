@@ -88,22 +88,6 @@ public class SubastaController {
         return new ResponseEntity<>(SubastaService.getAll() ,HttpStatus.ACCEPTED);
     }
     
-    
-    
-    @PostMapping("/createSubasta")
-     public ResponseEntity<?> createSubasta(@RequestBody String data) throws ParseException{
-         System.out.println(data);
-         JSONObject json = new JSONObject(data);
-         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-         Usuario user = UserService.findById(Long.parseLong(json.getString("user_id")));
-         Item it = ItemService.findById(Long.parseLong(json.getString("item_id")));
-         Date dateInicio = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
-         Date dateFin = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
-         Subasta subasta = new Subasta(it.getId(),it,user,dateInicio, dateFin, Long.parseLong(json.getString("highestPush")));
-         SubastaService.create(subasta);
-         return new ResponseEntity<>(HttpStatus.CREATED);  
-     }
-    
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Credenciales c){
     	try {
@@ -123,8 +107,6 @@ public class SubastaController {
             return new ResponseEntity<>("No se pudo registrar", HttpStatus.NOT_FOUND);
         }
     }
-    
-    
     
     @PostMapping("/createItem")
     public ResponseEntity<?> createItem(@RequestBody Item item){
@@ -149,6 +131,31 @@ public class SubastaController {
             return new ResponseEntity<>("No se pudo agregar categoria", HttpStatus.NOT_FOUND);
         }
     }
+
+    @PostMapping("/createSubasta")
+    public ResponseEntity<?> createSubasta(@RequestBody Subasta subasta){
+        try {
+            return new ResponseEntity<>(SubastaService.create(subasta), HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("No se pudo publicar la subasta", HttpStatus.NOT_FOUND);
+        }
+    }
+/** 
+    @PostMapping("/createSubasta")
+     public ResponseEntity<?> createSubasta(@RequestBody String data) throws ParseException{
+         System.out.println(data);
+         JSONObject json = new JSONObject(data);
+         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+         Usuario user = UserService.findById(Long.parseLong(json.getString("user_id")));
+         Item it = ItemService.findById(Long.parseLong(json.getString("item_id")));
+         Date dateInicio = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
+         Date dateFin = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
+         Subasta subasta = new Subasta(it.getId(),it,user,dateInicio, dateFin, Long.parseLong(json.getString("highestPush")));
+         SubastaService.create(subasta);
+         return new ResponseEntity<>(HttpStatus.CREATED);  
+    }
+*/
 
 //se puede borrar...
     @RequestMapping(method = RequestMethod.POST)
