@@ -1,0 +1,810 @@
+{
+	"info": {
+		"_postman_id": "08d3dbad-a7a3-4170-8bf1-3f41d3511589",
+		"name": "Subastas DINIPA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/subastas/register->diego",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 10191919,\n    \"userName\": \"Diegofc\",\n    \"name\": \"Diego Fernando\",\n    \"phone\": \"6666666\",\n    \"email\": \"diego@mail.com\",\n    \"password\": \"123456\",\n    \"ciudad\": \"Bogota D.C\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/register->juan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 20191919,\n    \"userName\": \"juan\",\n    \"name\": \"juan\",\n    \"phone\": \"6666666\",\n    \"email\": \"juan@mail.com\",\n    \"password\": \"123456\",\n    \"ciudad\": \"Bucaramanga\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/register->karol",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 30191919,\n    \"userName\": \"karol\",\n    \"name\": \"karol\",\n    \"phone\": \"6666666\",\n    \"email\": \"karol@mail.com\",\n    \"password\": \"123456\",\n    \"ciudad\": \"Bucaramanga\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/register->karen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 40191919,\n    \"userName\": \"karen\",\n    \"name\": \"karen\",\n    \"phone\": \"6666666\",\n    \"email\": \"karen@mail.com\",\n    \"password\": \"123456\",\n    \"ciudad\": \"Bucaramanga\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/register->eduardo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 50191919,\n    \"userName\": \"eduardo\",\n    \"name\": \"eduardo\",\n    \"phone\": \"6666666\",\n    \"email\": \"eduardo@mail.com\",\n    \"password\": \"123456\",\n    \"ciudad\": \"Cali\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->diego computador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 10191919,\n    \"id\": 101919191,\n    \"hopedPrice\": 200000,\n    \"priceSold\": 200000,\n    \"sold\": false,\n    \"description\": \"computador IBM\",\n    \"date\": \"2001-01-01\",\n    \"name\": \"computador\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->diego ferrari",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 10191919,\n    \"id\": 101919192,\n    \"hopedPrice\": 32000000,\n    \"priceSold\": 32000000,\n    \"sold\": false,\n    \"description\": \"ferrari testarossa\",\n    \"date\": \"2001-01-01\",\n    \"name\": \"ferrari testarossa\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->Juan colecion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 20191919,\n    \"id\": 201919191,\n    \"hopedPrice\": 200000,\n    \"priceSold\": 200000,\n    \"sold\": false,\n    \"description\": \"coleccion hotwheels\",\n    \"date\": \"2001-01-01\",\n    \"name\": \"hotwheels\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->karol anillo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 30191919,\n    \"id\": 301919191,\n    \"hopedPrice\": 2500000,\n    \"priceSold\": 2500000,\n    \"sold\": false,\n    \"description\": \"Anillo\",\n    \"date\": \"2001-01-01\",\n    \"name\": \"Annillo\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->karen bolso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 40191919,\n    \"id\": 401919191,\n    \"hopedPrice\": 2500000,\n    \"priceSold\": 2500000,\n    \"sold\": false,\n    \"description\": \"Bolso\",\n    \"date\": \"2001-01-01\",\n    \"name\": \"Bolso\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->karen espada",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 40191919,\n    \"id\": 401919192,\n    \"hopedPrice\": 100000,\n    \"priceSold\": 100000,\n    \"sold\": false,\n    \"description\": \"Espada\",\n    \"date\": \"2020-10-10\",\n    \"name\": \"Espada\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->karen armadura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 40191919,\n    \"id\": 401919193,\n    \"hopedPrice\": 900000,\n    \"priceSold\": 900000,\n    \"sold\": false,\n    \"description\": \"Armadura\",\n    \"date\": \"2001-01-01\",\n    \"name\": \"Armadura\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createItem->Eduardo anillo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 50191919,\n    \"id\": 501919191,\n    \"hopedPrice\": 200000,\n    \"priceSold\": 200000,\n    \"sold\": false,\n    \"description\": \"Anillo\",\n    \"date\": \"2001-01-01\",\n    \"name\": \"Annillo\",\n    \"categoria\": \"Antigüedades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createItem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->diego",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"10191919\",\n    \"item_id\":\"101919191\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-11-15 15:30:14\",\n    \"fechaFin\": \"2020-12-15 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->diego ferrari subasta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"10191919\",\n    \"item_id\":\"101919192\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-11-15 15:30:14\",\n    \"fechaFin\": \"2020-12-15 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->juan coleccion subasta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"20191919\",\n    \"item_id\":\"201919191\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-12-15 15:30:14\",\n    \"fechaFin\": \"2020-12-16 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->karol anill subasta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"30191919\",\n    \"item_id\":\"301919191\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-11-15 15:30:14\",\n    \"fechaFin\": \"2020-12-15 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->karen bolso subasta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"40191919\",\n    \"item_id\":\"401919191\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-11-15 15:30:14\",\n    \"fechaFin\": \"2020-11-16 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->karen espada subasta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"40191919\",\n    \"item_id\":\"401919192\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-09-10 15:30:14\",\n    \"fechaFin\": \"2020-09-09 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->karen armadura subasta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"40191919\",\n    \"item_id\":\"401919193\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-11-10 15:30:14\",\n    \"fechaFin\": \"2020-12-11 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/createSubasta->eduardo anillo subasta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"50191919\",\n    \"item_id\":\"501919191\",\n    \"highestPush\": \"0\",\n    \"fechaInicio\": \"2020-11-15 15:30:14\",\n    \"fechaFin\": \"2020-12-15 15:30:14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/createSubasta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"createSubasta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/10191919-> diego",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/10191919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"10191919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/20191919-> juan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/10191919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"10191919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/30191919-> karol",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/10191919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"10191919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/40191919-> karen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/10191919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"10191919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas ->subastas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subastas/50191919-> eduardo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subastas/10191919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subastas",
+						"10191919"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
