@@ -42,7 +42,7 @@ public class Item {
     
     public Item(){};
     
-    public Item(Long id, String name, String description,Long hopedPrice,Usuario user,Date date){
+    public Item(Long id, String name, String description,Long hopedPrice,Usuario user){
         this.id = id;
         this.name = name;
         this.description = description;

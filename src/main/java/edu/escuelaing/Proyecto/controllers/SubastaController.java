@@ -127,9 +127,12 @@ public class SubastaController {
     
     
     @PostMapping("/createItem")
-    public ResponseEntity<?> createItem(@RequestBody Item item){
+    public ResponseEntity<?> createItem(@RequestBody String data){
         try {
-            Usuario user = UserService.findById(Long.parseLong("10191919"));
+            JSONObject json = new JSONObject(data);
+            System.out.println(json.getLong("user_id"));
+            Usuario user = UserService.findById(json.getLong("user_id"));
+            Item item =new Item(json.getLong("id"),json.getString("name"),json.getString("description"),json.getLong("hopedPrice"),user);
             user.addItemPublished(item);
             Item it = ItemService.create(item);
             UserService.updateU(user);
