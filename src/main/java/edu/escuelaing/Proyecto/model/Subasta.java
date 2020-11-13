@@ -86,6 +86,17 @@ public class Subasta {
         return this.fechaFin;
     }
 
+    public Usuario getUserWinning() {return this.userWinning;    }
+
+    public void setUserWinning(Usuario userWinning) throws ExceptionModel {
+        if(this.id.toString().contains(userWinning.getId().toString())){
+            throw new ExceptionModel("the value needs to be higher");
+        }
+        else{
+            this.userWinning = userWinning;
+        }
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

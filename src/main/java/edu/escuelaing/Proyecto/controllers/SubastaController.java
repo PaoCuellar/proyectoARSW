@@ -144,6 +144,18 @@ public class SubastaController {
             return new ResponseEntity<>("No se pudo publicar la subasta", HttpStatus.NOT_FOUND);
         }
     }
+
+    @PostMapping("/Push")
+    public ResponseEntity<?> PushSubasta(@RequestBody String data){
+        try {
+            JSONObject json = new JSONObject(data);
+
+            return new ResponseEntity<>(SubastaService.push(json.getLong("subasta_id"),json.getLong("push"),UserService.findById(json.getLong("user_id"))), HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("No se pudo hacer la puja", HttpStatus.NOT_FOUND);
+        }
+    }
 /** 
     @PostMapping("/createSubasta")
      public ResponseEntity<?> createSubasta(@RequestBody String data) throws ParseException{
