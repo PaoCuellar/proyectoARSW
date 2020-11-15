@@ -25,14 +25,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -145,15 +138,16 @@ public class SubastaController {
         }
     }
 
-    @PostMapping("/Push")
+    @PostMapping("/subasta/push")
     public ResponseEntity<?> PushSubasta(@RequestBody String data){
         try {
+            System.out.println(data);
             JSONObject json = new JSONObject(data);
-
+            
             return new ResponseEntity<>(SubastaService.push(json.getLong("subasta_id"),json.getLong("push"),UserService.findById(json.getLong("user_id"))), HttpStatus.OK);
         } catch (Exception ex) {
             Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
-            return new ResponseEntity<>("No se pudo hacer la puja", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("No se pudo hacer la puja", HttpStatus.BAD_REQUEST);
         }
     }
 /** 

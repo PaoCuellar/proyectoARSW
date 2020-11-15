@@ -89,7 +89,7 @@ public class Subasta {
     public Usuario getUserWinning() {return this.userWinning;    }
 
     public void setUserWinning(Usuario userWinning) throws ExceptionModel {
-        if(this.id.toString().contains(userWinning.getId().toString())){
+        if(this.id.toString().equals(userWinning.getId().toString())){
             throw new ExceptionModel("the value needs to be higher");
         }
         else{
