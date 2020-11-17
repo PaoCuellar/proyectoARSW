@@ -1,6 +1,7 @@
-var app = (function () {
+var push = (function () {
 
 var stompClient = null;
+var module = "js/apiclient.js";
 
 var connectAndSubscribe = function() {
         console.info('Connecting to WS...');
@@ -19,6 +20,7 @@ var connectAndSubscribe = function() {
 function refresh(){
     document.getElementById('relevantInfo').style.visibility = "hidden";
     $('#relevantInfo').empty();
+    product = "<span class=\"reducedfrom\">$30.000</span>"+"<input type=\"text\" id=\"OfferSumited\" placeholder=\"OfferSumited\"><a href=\"#\"> </a>"
     stompClient.connect();
     stompClient.send('/topic/subasta.'+"101919191", {}, JSON.stringify(st));
     $('#relevantInfo').append(product);
@@ -30,7 +32,7 @@ return {
             connectAndSubscribe();
     },
     
-    push: function(){
+    push: function(id, value){
         refresh
     }
 };

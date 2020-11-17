@@ -61,6 +61,12 @@ public class SubastaController {
         return new ResponseEntity<>(SubastaService.getSubastabyUser(Long.parseLong(json.getString("user_id"))),HttpStatus.ACCEPTED);
     }
     
+    @GetMapping("/subasta/{subasta_id}")
+    public ResponseEntity<?> getSubastaById(@PathVariable String subasta_id){
+        System.out.println(subasta_id);
+        return new ResponseEntity<>(SubastaService.findById(Long.parseLong(subasta_id)),HttpStatus.ACCEPTED);
+    }
+    
     
     @GetMapping("/user/items")
     public ResponseEntity<?> getUserItems(@RequestBody String user_id){
