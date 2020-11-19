@@ -1,9 +1,14 @@
+
+/* global connectAndSubscribe */
+
 var pushS = (function () {
     
     var stompClient = null;
     var module = "js/apiclient.js";
     var product = "";
     var subastaSelected;
+    var connected = false;
+    var subastaIdSelected;
     
     
     class subasta{
@@ -17,23 +22,37 @@ var pushS = (function () {
         }
     }
     
-    var connectAndSubscribe = function(subastaId) {
+    function setconnected(){
+        connected = true;
+    }
+    
+    function setsubastaID(id){
+        subastaIdSelected = id;
+    }
+    
+    var connectAndSubscribe = function() {
+        console.log("ID SuBASTA "+subastaIdSelected);
         console.info('Connecting to WS...');
         var socket = new SockJS('/stompendpoint');
         stompClient = Stomp.over(socket);
+        console.log("connected");
         stompClient.connect({}, function (frame) {
+            console.log("ID SuBASTA "+subastaIdSelected);
+            console.log("ID SuBASTA "+subastaIdSelected);
             console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/subasta.'+subastaId,function (message) {
-                alert("subscribed");
-                var theObject=JSON.parse(message.body);
-                reload(theObject.id);
+            setconnected();
+            stompClient.subscribe("/topic/subasta."+subastaIdSelected,function (Subasta) {
+                alert("¡Nueva oferta detectada!");
+                var theObject=JSON.parse(Subasta.body);
+                console.log(Subasta);
+                reload(theObject);
             });
         });
         
     };
     
-    function reload (subastaId){
-        stompClient.send('/topic/subasta.'+subasta.id, {}, JSON.stringify(this.subastaSelected));
+    function reload (subastaId){  
+        console.log("RELOAD----- "+subastaId);
         $.getScript(module, function(){
             api.getSubastaById(subastaId, refresh);
         });
@@ -44,12 +63,25 @@ var pushS = (function () {
     }
     
     function refresh(subasta){
+        if (!connected){
+            connectAndSubscribe();
+        }
         setSubasta(subasta);
         document.getElementById('relevantInfo').style.visibility = "hidden";
         $('#relevantInfo').empty();
         htmlProduct(subasta);
         $('#relevantInfo').append(product);
         document.getElementById('relevantInfo').style.visibility = "visible";
+    }
+    
+    function postedPush(subastaId){
+        console.log("POSTED");
+        console.log('/app/subasta.'+subastaId);
+        console.log(subastaSelected);
+        if (connected){
+            stompClient.send("/app/subasta."+subastaId, {}, JSON.stringify(this.subastaSelected));
+        }
+        
     }
     
     function htmlProduct(subastaSelected){
@@ -73,28 +105,35 @@ var pushS = (function () {
                 +"</div>"
                 +"<h2 class=\"quick\">Descripción:</h2>"
                 +"<p class=\"quick_desc\">"+this.subastaSelected.description+"</p>"
-                
                 +"<button class=\"btn btn-outline-primary\" onclick=\"pushS.pushSubasta("+this.subastaSelected.id+",20191919,"+"offerSumited.value)\">Ofertar</button>"
+        
                 +"</div>"
                 +"<div class=\"clearfix\"> </div>";
     }
 
 return {
-    
+    connect: function(){
+            connectAndSubscribe();
+            
+    },
     
     pushSubasta: function(subastaId,userId,push ){
-        console.log(subastaId+" "+userId+"" +push);
         $.getScript(module, function(){
-            api.postSubastaPush(subastaId,userId,push, refresh);
+            api.postSubastaPush(subastaId,userId,push);
+        });
+        postedPush(subastaId);
+        $.getScript(module, function(){
+            api.getSubastaById(subastaId, refresh);
         });
         
     },
 
     load: function(subastaId){
-        connectAndSubscribe(subastaId);
+        setsubastaID(subastaId);
         $.getScript(module, function(){
             api.getSubastaById(subastaId, refresh);
         });
+        
     }
 };
 })();

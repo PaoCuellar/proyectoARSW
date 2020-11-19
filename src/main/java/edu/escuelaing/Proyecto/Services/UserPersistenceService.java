@@ -25,7 +25,7 @@ public class UserPersistenceService {
     UserPersistence service;
 
     public Usuario findById(Long id){
-        return service.findById(id).get();
+        return service.getOne(id);
     }
     
     
@@ -65,7 +65,7 @@ public class UserPersistenceService {
     }
     
     public void delete(Long id){
-        service.deleteById(id);
+        service.delete(service.getOne(id));
     }
 
 

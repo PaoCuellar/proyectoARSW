@@ -60,7 +60,7 @@ public class SubastaPersistenceService {
     }
     
     public void delete(Long id){
-        service.deleteById(id);
+        service.delete(service.getOne(id));
     }
     
     public List<Subasta> getSubastabyUser(Long userId){

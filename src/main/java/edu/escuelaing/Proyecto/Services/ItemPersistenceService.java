@@ -44,7 +44,7 @@ public class ItemPersistenceService {
     }
     
     public void delete(Long id){
-        service.deleteById(id);
+        service.delete(service.getOne(id));
     }
     
     public Item getItembyUser(Usuario user, Long itemId){

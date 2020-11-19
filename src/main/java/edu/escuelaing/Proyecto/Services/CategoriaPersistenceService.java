@@ -34,6 +34,6 @@ public class CategoriaPersistenceService {
     }
     
     public void delete(Long id){
-        service.deleteById(id);
+        service.delete(service.getOne(id));
     }
 }

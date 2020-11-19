@@ -25,6 +25,10 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -47,6 +51,10 @@ public class SubastaController {
     
     @Autowired
     SubastaPersistenceService SubastaService;
+    
+    @Autowired
+    SimpMessagingTemplate msgt;
+
     
     
     @GetMapping("/{user_Id}")
@@ -178,6 +186,14 @@ public class SubastaController {
         JSONObject jsonObject = new JSONObject(client);
         UserService.create(new Usuario(Long.parseLong(jsonObject.getString("id")),jsonObject.getString("name"),jsonObject.getString("passwd"),jsonObject.getString("userName"),jsonObject.getString("phone"),jsonObject.getString("Email"),jsonObject.getString("ciudad")));
         return new ResponseEntity<>(HttpStatus.CREATED);       
+    }
+    
+    @MessageMapping("/subasta.{subastaId}")
+    public void SubastaMessage(@DestinationVariable String subastaId) throws Exception {
+        System.out.println("Nuevo asiento recibido en el servidor!:"+subastaId);
+        System.out.println(subastaId);
+        Subasta s = SubastaService.findById(Long.parseLong(subastaId));
+        msgt.convertAndSend("/topic/subasta."+subastaId, s.getId());
     }
     
 }

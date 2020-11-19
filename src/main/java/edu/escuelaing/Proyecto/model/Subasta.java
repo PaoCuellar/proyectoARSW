@@ -90,7 +90,7 @@ public class Subasta {
 
     public void setUserWinning(Usuario userWinning) throws ExceptionModel {
         if(this.id.toString().equals(userWinning.getId().toString())){
-            throw new ExceptionModel("the value needs to be higher");
+            throw new ExceptionModel("you can not participate in your own items");
         }
         else{
             this.userWinning = userWinning;
