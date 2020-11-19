@@ -1604,6 +1604,20 @@ i.mail{
 	border:none;
 	outline:none;
 }
+#registerbutton {
+	background:#df1f26;
+	color: #FFF;
+	font-size: 0.8em;
+	padding: 0.7em 1.2em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	text-transform: uppercase;
+	border:none;
+	outline:none;
+}
+registerbutton
 .register-but input[type="submit"]:hover {
 	background:#000;
 }
@@ -1711,7 +1725,20 @@ p.cart {
 	border:none;
 	outline:none;
 }
-
+/*--PRODUCT--*/
+#OfertarProduct {
+	background:#df1f26;
+	color: #FFF;
+	font-size: 0.8em;
+	padding: 0.7em 1.2em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	text-transform: uppercase;
+	border:none;
+	outline:none;
+}
 /*--administrator--*/
 #createCategoryButton {
 	background:#df1f26;
