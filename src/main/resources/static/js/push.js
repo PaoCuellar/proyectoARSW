@@ -26,8 +26,19 @@ var pushS = (function () {
         connected = true;
     }
     
-    function setsubastaID(id){
-        subastaIdSelected = id;
+    function setsubastaID(){
+        var coockie = document.cookie;
+        var values = coockie.split(";");
+        console.log(values);
+        for (var i = 0; i<values.length;i++){
+            var temp = values[i].replace(" ","").split("=");
+            console.log(temp[1]);
+            if (temp[0]==="subastaId"){
+                subastaIdSelected = temp[1];
+                break
+            }
+        }
+        alert(subastaIdSelected);
     }
     
     var connectAndSubscribe = function() {
@@ -132,10 +143,11 @@ return {
         
     },
 
-    load: function(subastaId){
-        setsubastaID(subastaId);
+    load: function(){
+        setsubastaID();
         $.getScript(module, function(){
-            api.getSubastaById(subastaId, refresh);
+            alert("LOAD: "+ subastaIdSelected);
+            api.getSubastaById(subastaIdSelected,refresh);
         });
         
     }
