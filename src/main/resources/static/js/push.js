@@ -38,7 +38,6 @@ var pushS = (function () {
                 break
             }
         }
-        alert(subastaIdSelected);
     }
     
     var connectAndSubscribe = function() {
@@ -53,24 +52,22 @@ var pushS = (function () {
             console.log('Connected: ' + frame);
             setconnected();
             stompClient.subscribe("/topic/subasta."+subastaIdSelected,function (Subasta) {
-                alert("¡Nueva oferta detectada!");
-                var theObject=JSON.parse(Subasta.body);
-                console.log(Subasta);
+                var theObject=JSON.parse(Subasta.body); 
                 reload(theObject);
             });
         });
         
     };
     
-    function reload (subastaId){  
-        console.log("RELOAD----- "+subastaId);
+    function reload (){  
+        console.log("RELOAD----- "+subastaIdSelected);
         $.getScript(module, function(){
-            api.getSubastaById(subastaId, refresh);
+            api.getSubastaById(subastaIdSelected, refresh);
         });
     }
     
     function setSubasta(subast){
-        this.subastaSelected = new subasta(subast); 
+        subastaSelected = new subasta(subast); 
     }
     
     function refresh(subasta){
@@ -80,26 +77,24 @@ var pushS = (function () {
         setSubasta(subasta);
         document.getElementById('relevantInfo').style.visibility = "hidden";
         $('#relevantInfo').empty();
-        htmlProduct(subasta);
-        $('#relevantInfo').append(product);
         document.getElementById('relevantInfo').style.visibility = "visible";
-        document.getElementById('descriptionproduct').innerHTML = this.subastaSelected.description;
-        document.getElementById('titleproduct').innerHTML = this.subastaSelected.name;
-        document.getElementById('newprice').innerHTML = this.subastaSelected.highestPush;
+        document.getElementById('descriptionproduct').innerHTML = subastaSelected.description;
+        document.getElementById('titleproduct').innerHTML = subastaSelected.name;
+        document.getElementById('newprice').innerHTML = subastaSelected.highestPush;
     }
     
-    function postedPush(subastaId){
+    function postedPush(){
         console.log("POSTED");
-        console.log('/app/subasta.'+subastaId);
+        console.log('/app/subasta.'+subastaIdSelected);
         console.log(subastaSelected);
         if (connected){
-            stompClient.send("/app/subasta."+subastaId, {}, JSON.stringify(this.subastaSelected));
+            stompClient.send("/app/subasta."+subastaIdSelected, {}, JSON.stringify(subastaSelected));
         }
         
     }
     
     function htmlProduct(subastaSelected){
-        console.log("Subasta ID : "+ this.subastaSelected.id);
+        console.log("Subasta ID : "+ subastaSelected.id);
         product ="<div class=\"grid images_3_of_2\">"
                 +"<ul id=\"etalage\">"
                 +"<li>"
@@ -112,15 +107,15 @@ var pushS = (function () {
                 +"<div class=\"clearfix\"></div>"
                 +"</div>"
                 +"<div class=\"desc1 span_3_of_2\">"
-                +"<h1>"+"$"+this.subastaSelected.name+"</h1>"
+                +"<h1>"+"$"+subastaSelected.name+"</h1>"
                 +"<div  class=\"price_single\">"  
-                +"<span class=\"reducedfrom\">"+"$"+this.subastaSelected.highestPush+"</span>"
+                +"<span class=\"reducedfrom\">"+"$"+subastaSelected.highestPush+"</span>"
                 +"<input type=\"text\" id=\"offerSumited\" placeholder=\"OfferSumited\"><a href=\"#\"> </a>"
                 +"</div>"
                 +"<h2 class=\"quick\">Descripción:</h2>"
-                +"<p class=\"quick_desc\">"+this.subastaSelected.description+"</p>"
+                +"<p class=\"quick_desc\">"+subastaSelected.description+"</p>"
 
-                +"<button class=\"btn btn-outline-primary\" onclick=\"pushS.pushSubasta("+this.subastaSelected.id+",20191919,"+"offerSumited.value)\">Ofertar</button>"
+                +"<button class=\"btn btn-outline-primary\" onclick=\"pushS.pushSubasta("+subastaSelected.id+",20191919,"+"offerSumited.value)\">Ofertar</button>"
 
                 +"</div>"
                 +"<div class=\"clearfix\"> </div>";
@@ -132,24 +127,28 @@ return {
             
     },
     
-    pushSubasta: function(subastaId,userId,push ){
+    pushSubasta: function(userId,push ){
         $.getScript(module, function(){
-            api.postSubastaPush(subastaId,userId,push);
+            api.postSubastaPush(subastaIdSelected,userId,push);
         });
-        postedPush(subastaId);
-        $.getScript(module, function(){
-            api.getSubastaById(subastaId, refresh);
+        postedPush();
+        subastaSelected.highestPush = push;
+        
+         $.getScript(module, function(){
+            api.getSubastaById(subastaIdSelected, refresh);
         });
+
         
     },
 
     load: function(){
         setsubastaID();
         $.getScript(module, function(){
-            alert("LOAD: "+ subastaIdSelected);
             api.getSubastaById(subastaIdSelected,refresh);
         });
         
     }
+    
+    
 };
 })();
