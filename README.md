@@ -4,10 +4,7 @@
 ## Integrantes: 
 >- Paola Andrea Cuellar Lopez
 >- Nicolás Ortega Limas
->- Diego Chinchilla
-
-      
-      
+>- Diego Chinchilla     
 
 ## Roles:
 |     Nombre    |     Rol         | Trabajo realizado
@@ -24,12 +21,27 @@ Permite a los usuarios publicar e interactuar activamente con las
 subastas; registrando ofertas, reacciones y comentarios, además de brindar
 la opción de poder visualizar los datos en gráficas, de tal manera que sean mucho más amenos al usuario.
 
+## Construido con
+
++ [Maven](https://maven.apache.org/) - Manejo de dependencias
++ [Git](https://git-scm.com/) - Control de versiones
++ [Java](https://www.java.com/es/) - Lenguaje de programación
++ [Spring](https://spring.io/) - Framework
++ [Crazy Egg](https://crazyegg.com/) - Testing requerimientos no funcionales
++ [JCache](https://www.baeldung.com/jcache) - Implementación del cache
++ [Postman](https://www.postman.com/) - Pruebas de integración
++ [Newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/) - Automatización de pruebas de integración
+
 ## Herramientas para seguir el estado del proyecto
 
+## _Analisis estático de codigo_
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/66413a0ec2734ce6b0ae2e8a9271ffbc)](https://www.codacy.com/manual/PaoCuellar/proyectoARSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PaoCuellar/proyectoARSW&amp;utm_campaign=Badge_Grade)
+## _Analisis dinamico de codigo_
 [![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
+## _Despliegue en Heroku_
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://subastasdinipa.herokuapp.com)
-
+## _Planeación en JIRA_
+[JIRA](https://dinipa.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=SUB&view=planning.nodetail&issueLimit=100&atlOrigin=eyJpIjoiNWFjOTMyNmE2ZDExNDRjM2FjZGJmZGZmMDJjY2Y0YzEiLCJwIjoiaiJ9)
 ## Diagramas de casos de uso:
 
 ## Administrador
@@ -112,7 +124,10 @@ En este proyecto decidimos documentar dos escenarios que muestren nuestra apropi
 Escogimos la **Usabilidad** y la demostraremos por medio del uso de las pruebas A/B y de la herramienta **Crazy Egg** 
 
 ### Pruebas A/B
+
 El A/B Testing consiste en desarrollar y lanzar dos o más versiones de un mismo elemento y medir cuál funciona mejor. Es una prueba que nos sirve para optimizar una estrategia de  marketing o para mejorar la usabilidad de una pagina web.
+
+![ab](/Diagramas/V.F/ab.png)
 
 ## Funcionamiento
 Este método consiste en desarrollar dos versiones de un mismo elemento que vamos a lanzar al mercado (por ejemplo, un botón de  azul y uno amarillo), y luego utilizar las métricas de cada variación para evaluar cuál funciona mejor.
@@ -128,37 +143,70 @@ En nuestro caso decidimos usar algunas modificaciones como lo fueron:
 ### Crazy Egg
 Crazy Egg es una herramienta de usabilidad y optimización web que monitoriza la actividad de los usuarios en una página web. Permite extraer información muy útil de cara a ver cómo se navega la página, ya que muestra, por ejemplo, en qué secciones de la web se detienen los usuarios, hasta qué punto hacen scroll, dónde hacen clic, etc. Con estos datos se pueden tomar decisiones cruciales tanto de diseño como de usabilidad.
 
+* Generamos Scroll maps que nos muestran el contenido más visualizado de nuestro API:
+<center>
+![crazyegg](/Diagramas/V.F/Crazyegg1.PNG)
+</center>
+* Generamos Heat maps que nos muestran el contenido más clickeado junto con sus elementos relacionados de nuestro API:
+
+![crazyegg](/Diagramas/V.F/Crazyegg4.PNG)
+
+* Generamos Confetti maps que básicamente es un heat map ampliado que muestra las fuentes de referencia que generan la mayor cantidad de clics y la tendencia de estos en el API:
+
+![crazyegg](/Diagramas/V.F/Crazyegg2.PNG)
+
+* Finalmente generamos estadísticas por cada elemento disponible para saber que elementos eran los que estaban recibiendo más interacciones:
+
+![crazyegg](/Diagramas/V.F/Crazyegg3.PNG)
+
+
+
 ### Prueba antes y despues de cache
 
 Implementamos una de las soluciones de cache soportadas por Spring llamada JCache. Esta implementación nos redujo los timepos de carga medidos por Crazy Egg como se muestra a continuación:
 * Antes
-  ![cache](/Diagramas/V.F/Pruebainicialantesdecache1.PNG)
-  
-* Después  
-  ![cache](/Diagramas/V.F/Pruebainicialantesdecache3.PNG)  
+
+![cache](/Diagramas/V.F/Pruebainicialantesdecache1.PNG)
+
+* Después
+
+![cache](/Diagramas/V.F/Pruebadespuesdecache3.PNG)  
+
+## Implementacion del real time
+
+Implementamos el real time en nuestro API mediante la oferta de la subasta:
+
+
 
 ## Escenarios de calidad
 * Realizar una puja por un producto
 * En primer lugar en Crazy Egg definimos 3 Variantes para este caso de uso.
-* Variante de Control       
+* Variante de Control 
+
 ![Puja producto](/Diagramas/V.F/Pruebasa-b4.PNG)
 * Variante uno
+
 ![Puja producto](/Diagramas/V.F/Pruebasa-b5.PNG)
 * Variante dos
+
 ![Puja producto](/Diagramas/V.F/Pruebasa-b6.PNG)
 * Resultados
+
 ![Puja producto](/Diagramas/V.F/Pruebasa-b7.PNG)
 ![Puja producto](/Diagramas/V.F/Pruebasa-b1.PNG)
 ![Puja producto](/Diagramas/V.F/Pruebasa-b2.PNG)
 
         
 * Publicar un articulo
-* En primer lugar en Crazy Egg definimos 3 Variantes para este caso de uso.
+* En primer lugar en Crazy Egg definimos 2 Variantes para este caso de uso.
 * Variante de Control 
+
 ![Publicar articulo](/Diagramas/V.F/Pruebasa-b10.PNG)
 * Variante uno
+
 ![Publicar articulo](/Diagramas/V.F/Pruebasa-b11.PNG)
 * Resultados
+
 ![Publicar articulo](/Diagramas/V.F/Pruebasa-b8.PNG)
 ![Publicar articulo](/Diagramas/V.F/Pruebasa-b9.PNG)
 
