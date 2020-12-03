@@ -28,7 +28,6 @@ public class SubastaPersistenceService {
     @Autowired
     SubastaPersistence service;
     
-    @Cacheable(value="subasta")
     public Subasta findById(Long id){
         System.out.println("PUSH FIND "+id);
         System.out.println("PUSH FIND "+service.getOne(id).highestPush);
