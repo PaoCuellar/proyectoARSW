@@ -10,12 +10,12 @@
       
 
 ## Roles:
-|     Nombre    |     Rol         |
-|:--------------:|:-------------: |
-|Paola Andrea Cuellar López |Team Developer    |
-|Nicolas Ortega Limas |Team Developer   |
-|Diego Chinchilla |Team Developer   |
-|Ing. Sebastián Henao Pinzón |Product Owner   |
+|     Nombre    |     Rol         | Trabajo realizado
+|:--------------:|:-------------: |:-------------: |
+|Paola Andrea Cuellar López |Team Developer    |  Front End Developer  |
+|Nicolas Ortega Limas |Team Developer   | Application Arquitect |
+|Diego Chinchilla |Team Developer   | Back End Developer
+|Ing. Sebastián Henao Pinzón |Product Owner   |   |
 # SubastasDINIPA
 ## Resumen
 ## Descripción (antecedentes, problema que se resuelve, etc.). 
@@ -23,6 +23,13 @@ Esta aplicación tiene como objetivo principal brindar a la comunidad una herram
 Permite a los usuarios publicar e interactuar activamente con las
 subastas; registrando ofertas, reacciones y comentarios, además de brindar
 la opción de poder visualizar los datos en gráficas, de tal manera que sean mucho más amenos al usuario.
+
+## Herramientas para seguir el estado del proyecto
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/66413a0ec2734ce6b0ae2e8a9271ffbc)](https://www.codacy.com/manual/PaoCuellar/proyectoARSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PaoCuellar/proyectoARSW&amp;utm_campaign=Badge_Grade)
+[![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://subastasdinipa.herokuapp.com)
+
 ## Diagramas de casos de uso:
 
 ## Administrador
@@ -96,14 +103,16 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa
   ![VistaArticuloNormal](/Imagenes/VistaUsuarioNormal.png)
 * Vista de las subastas participadas por el usuario
   ![SubastasParticipadas](/Imagenes/SubastaParticipadas.png)
+  
 ### Metodología.
+En este proyecto pusimos en práctica la utilización de **la metodología Scrum** en la cual el equipo se reúne y planea lo que se realizará en los diferentes Sprint, la herramienta que se utilizo fue **JIRA** la cual nos permite llevar un control de las historias de usuario y repartir las tareas entre los integrantes.
 
-En este proyecto pusimos en práctica la utilización de **la metodología Scrum** en la cual el equipo se reúne y planea lo que se realizará en los diferentes Sprint, la herramienta que se utilizo fue **Una hoja de excel para llevar los registros** la cual nos permite llevar un control de las historias de usuario y repartir las tareas entre los integrantes.
+### Atributos No Funcionales
+En este proyecto decidimos documentar dos escenarios que muestren nuestra apropiación del requerimiento no funcional. 
+Escogimos la **Usabilidad** y la demoestraremos por medio de la herramienta **Crazy Egg** 
 
-Al finalizar cada Sprint, el equipo se reúne para planear el siguiente y se comentan lo que sucedió con el anterior.
+## Escenarios de calidad
+* Realizar una puja por un producto
 
-## Herramientas
+* Publicar un articulo
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/66413a0ec2734ce6b0ae2e8a9271ffbc)](https://www.codacy.com/manual/PaoCuellar/proyectoARSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PaoCuellar/proyectoARSW&amp;utm_campaign=Badge_Grade)
-[![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
-[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://subastasdinipa.herokuapp.com)
