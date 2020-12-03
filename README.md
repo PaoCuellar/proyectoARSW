@@ -9,10 +9,10 @@
 ## Roles:
 |     Nombre    |     Rol         | Trabajo realizado
 |:--------------:|:-------------: |:-------------: |
-|Paola Andrea Cuellar López |Team Developer    |  Front End Developer  |
-|Nicolas Ortega Limas |Team Developer   | Application Arquitect |
-|Diego Chinchilla |Team Developer   | Back End Developer
-|Ing. Sebastián Henao Pinzón |Product Owner   |   |
+|Paola Andrea Cuellar López |Team Developer    |  Desarrollo de la capa de Front End  |
+|Nicolas Ortega Limas |Team Developer   | Pruebas ,requerimiento no funcionales y Diagramas |
+|Diego Chinchilla |Team Developer   | Desarrollo de la capa de Back End |
+|Ing. Sebastián Henao Pinzón |Product Owner   | Revisor del proyecto  |
 # SubastasDINIPA
 ## Resumen
 ## Descripción (antecedentes, problema que se resuelve, etc.). 
@@ -24,10 +24,10 @@ la opción de poder visualizar los datos en gráficas, de tal manera que sean mu
 ## Construido con
 
 + [Maven](https://maven.apache.org/) - Manejo de dependencias
-+ [Git](https://git-scm.com/) - Control de versiones
-+ [Java](https://www.java.com/es/) - Lenguaje de programación
-+ [Spring](https://spring.io/) - Framework
++ [Java](https://www.java.com/es/) - Lenguaje usado para el desarrollo
++ [Spring](https://spring.io/) - Framework de desarrollo
 + [Crazy Egg](https://crazyegg.com/) - Testing requerimientos no funcionales
++ [Git](https://git-scm.com/) - Control de versiones
 + [JCache](https://www.baeldung.com/jcache) - Implementación del cache
 + [Postman](https://www.postman.com/) - Pruebas de integración
 + [Newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/) - Automatización de pruebas de integración
@@ -42,6 +42,10 @@ la opción de poder visualizar los datos en gráficas, de tal manera que sean mu
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://subastasdinipa.herokuapp.com)
 ## _Planeación en JIRA_
 [JIRA](https://dinipa.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=SUB&view=planning.nodetail&issueLimit=100&atlOrigin=eyJpIjoiNWFjOTMyNmE2ZDExNDRjM2FjZGJmZGZmMDJjY2Y0YzEiLCJwIjoiaiJ9)
+## _Manual de Usuario_
+[Manual](https://drive.google.com/drive/folders/1WC7crx8RnaEJA80IYtP0BixXPEDTTPFi)
+
+
 ## Diagramas de casos de uso:
 
 ## Administrador
