@@ -185,6 +185,7 @@ Implementamos una de las soluciones de cache soportadas por Spring llamada JCach
 
 Implementamos el real time en nuestro API mediante la oferta de la subasta:
 
+<img src="/Diagramas/V.F/Realtime.gif" width="8000" height="800" />
 
 
 ## Escenarios de calidad
