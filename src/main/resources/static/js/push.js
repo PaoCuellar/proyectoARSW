@@ -1,6 +1,4 @@
 
-/* global connectAndSubscribe */
-
 var pushS = (function () {
     
     var stompClient = null;

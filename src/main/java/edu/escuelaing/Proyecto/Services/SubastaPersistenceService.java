@@ -54,7 +54,6 @@ public class SubastaPersistenceService {
         }
     }
     
-    @CachePut(value="subasta")
     public Subasta push(Long subasta_id,Long push,Usuario user){
         Subasta subasta = service.getOne(subasta_id);
         try {

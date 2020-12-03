@@ -133,9 +133,10 @@ public class SubastaController {
     public ResponseEntity<?> createItem(@RequestBody String data){
         try {
             JSONObject json = new JSONObject(data);
-            System.out.println(json.getLong("user_id"));
-            Usuario user = UserService.findById(json.getLong("user_id"));
-            Item item =new Item(json.getLong("id"),json.getString("name"),json.getString("description"),json.getLong("hopedPrice"),user);
+            Usuario user = UserService.findById(Long.parseLong("10191919"));
+            int subastaID = user.getItems().size()+1;
+            String id = String.valueOf(String.valueOf("10191919"+subastaID));
+            Item item =new Item(Long.parseLong(id),json.getString("name"),json.getString("description"),json.getLong("hopedPrice"),user);
             user.addItemPublished(item);
             Item it = ItemService.create(item);
             UserService.updateU(user);
@@ -159,6 +160,7 @@ public class SubastaController {
     @PostMapping("/createSubasta")
     public ResponseEntity<?> createSubasta(@RequestBody Subasta subasta){
         try {
+            
             return new ResponseEntity<>(SubastaService.create(subasta), HttpStatus.OK);
         } catch (Exception ex) {
             Logger.getLogger(SubastaController.class.getName()).log(Level.SEVERE, null, ex);
@@ -190,9 +192,9 @@ public class SubastaController {
     @MessageMapping("/subasta.{subastaId}")
     public void SubastaMessage(@DestinationVariable String subastaId) throws Exception {
         System.out.println("Nuevo asiento recibido en el servidor!:"+subastaId);
-        System.out.println(subastaId);
         Subasta s = SubastaService.findById(Long.parseLong(subastaId));
-        msgt.convertAndSend("/topic/subasta."+subastaId, s.getId());
+        System.out.println(s.getId());
+        msgt.convertAndSend("/topic/subasta."+subastaId, s);
     }
     
 }
