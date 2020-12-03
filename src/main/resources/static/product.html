@@ -41,7 +41,7 @@
             </script>	
 
 </head>
-<body onload="pushS.load(101919191)">
+<body onload="pushS.load()">
 <div class="header">
 	<div class="header_top">
 		<div class="container">
@@ -168,12 +168,47 @@
 						 <div class="clearfix"></div>		
 				  </div> 
           <div class="desc1 span_3_of_2">
-				  	<h1> <p id="titleproduct"></p> </h1>
+					  <h1> <p id="titleproduct"></p> </h1>
+					  <!--Cuenta regresiva-->
+					  <div id="countdown"> </div>
+					  <script>
+						var end = new Date('12/17/2020 9:30 AM');
+						
+							var _second = 1000;
+							var _minute = _second * 60;
+							var _hour = _minute * 60;
+							var _day = _hour * 24;
+							var timer;
+						
+							function showRemaining() {
+								var now = new Date();
+								var distance = end - now;
+								if (distance < 0) {
+						
+									clearInterval(timer);
+									document.getElementById('countdown').innerHTML = 'EXPIRED!';
+						
+									return;
+								}
+								var days = Math.floor(distance / _day);
+								var hours = Math.floor((distance % _day) / _hour);
+								var minutes = Math.floor((distance % _hour) / _minute);
+								var seconds = Math.floor((distance % _minute) / _second);
+						
+								document.getElementById('countdown').innerHTML = days + ' dias, ';
+								document.getElementById('countdown').innerHTML += hours + ' horas, ';
+								document.getElementById('countdown').innerHTML += minutes + ' minutos y ';
+								document.getElementById('countdown').innerHTML += seconds + ' segundos';
+							}
+						
+							timer = setInterval(showRemaining, 1000);
+					 </script>
+
 			    <div class="price_single">
 				  <span class="reducedfrom"> <p id="oldprice"></p> </span>
 				  <span class="actual"> <p id="newprice"></p> </span>
                   <input type="text" id="offerSumited" placeholder="Valor a ofertar"><a href="#"> </a>
-                    <a href="product.html" title="Get It" class="btn bt1 btn-primary btn-normal btn-inline " target="_self" id="OfertarProduct" onclick="pushS.pushSubasta(+this.subastaSelected.id,20191919,offerSumited.value)">Ofertar</a>
+                    <a title="Get It" class="btn bt1 btn-primary btn-normal btn-inline " target="_self" id="OfertarProduct" onclick="pushS.pushSubasta('20191919',offerSumited.value)">Ofertar</a>
 				</div>
             </div>
           </div>

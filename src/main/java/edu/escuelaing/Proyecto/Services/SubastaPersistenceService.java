@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 
 /**
  *
@@ -25,16 +27,21 @@ import java.util.logging.Logger;
 public class SubastaPersistenceService {
     @Autowired
     SubastaPersistence service;
-
+    
+    @Cacheable(value="subasta")
     public Subasta findById(Long id){
+        System.out.println("PUSH FIND "+id);
+        System.out.println("PUSH FIND "+service.getOne(id).highestPush);
         return service.getOne(id);
     }
     
+    @Cacheable("subastas")
     public List<Subasta> getAll(){
         return service.findAll();
     }
     
     public Subasta create(Subasta Subasta){
+        
         return service.save(Subasta);
     }
     
@@ -46,16 +53,20 @@ public class SubastaPersistenceService {
             Logger.getLogger(SubastaPersistenceService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    @CachePut(value="subasta")
     public Subasta push(Long subasta_id,Long push,Usuario user){
         Subasta subasta = service.getOne(subasta_id);
         try {
+            subasta = service.getOne(subasta_id);
             subasta.setUserWinning(user);
             subasta.setHighestPush(push);
+            System.out.println("PUSH CHECK "+subasta_id);
             service.save(subasta);
         } catch (ExceptionModel exceptionModel) {
             exceptionModel.printStackTrace();
         }
+        System.out.println("PUSH CHECK "+subasta.highestPush);
         return subasta;
     }
     
