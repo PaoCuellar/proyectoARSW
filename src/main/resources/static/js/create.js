@@ -9,7 +9,8 @@ $(document).ready(function () {
 			"description": $("#productdescription").val(),
 		})
 
-		//create Item
+		//create 
+                
 		$.ajax({
 			type: "POST",
 			url: "https://subastasdinipa.herokuapp.com/subastas/createItem",
@@ -30,6 +31,7 @@ $(document).ready(function () {
 				alert(xhr.responseText);
 			}
 		});
+                location.replace("https://subastasdinipa.herokuapp.com/index.html");
 		//createSubasta
 		/* $.ajax({
 				type: "POST",
