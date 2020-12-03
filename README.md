@@ -153,9 +153,9 @@ En nuestro caso decidimos usar algunas modificaciones como lo fueron:
 Crazy Egg es una herramienta de usabilidad y optimización web que monitoriza la actividad de los usuarios en una página web. Permite extraer información muy útil de cara a ver cómo se navega la página, ya que muestra, por ejemplo, en qué secciones de la web se detienen los usuarios, hasta qué punto hacen scroll, dónde hacen clic, etc. Con estos datos se pueden tomar decisiones cruciales tanto de diseño como de usabilidad.
 
 * Generamos Scroll maps que nos muestran el contenido más visualizado de nuestro API:
-<center>
+
 ![crazyegg](/Diagramas/V.F/Crazyegg1.PNG)
-</center>
+
 * Generamos Heat maps que nos muestran el contenido más clickeado junto con sus elementos relacionados de nuestro API:
 
 ![crazyegg](/Diagramas/V.F/Crazyegg4.PNG)
