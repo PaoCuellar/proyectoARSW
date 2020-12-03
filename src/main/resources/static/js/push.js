@@ -1,3 +1,4 @@
+/* global connectAndSubscribe */
 
 var pushS = (function () {
     
