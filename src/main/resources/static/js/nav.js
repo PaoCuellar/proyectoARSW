@@ -15,6 +15,7 @@ $(document).ready(function() {
     
     $("#logout").click(function(){
         localStorage.removeItem("login")
+		localStorage.removeItem("admin")
         window.location.href="/index.html"
     })
 	adjustMenu();
@@ -59,5 +60,13 @@ var adjustMenu = function() {
         $(".showlogin").each((index,element) => {$(element).hide()})
         $(".hidlogin").each((index,element) => {$(element).show()})
     }
+
+	var logvar = localStorage.getItem("admin")
+	if (logvar){
+		$(".showInfo").each((index,element) => {$(element).show()})
+	}
+	else{
+		$(".showInfo").each((index,element) => {$(element).hide()})
+	}
 }
 
