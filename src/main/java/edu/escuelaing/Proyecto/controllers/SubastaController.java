@@ -80,7 +80,7 @@ public class SubastaController {
         JSONObject json = new JSONObject(user_id);
         return new ResponseEntity<>(UserService.findById(Long.parseLong(json.getString("user_id"))).getItems(),HttpStatus.ACCEPTED);
     }
-    
+
     @GetMapping("/user/item")
     public ResponseEntity<?> getUserItem(@RequestBody String user_id){
         JSONObject json = new JSONObject(user_id);
@@ -88,7 +88,12 @@ public class SubastaController {
         ItemService.getItembyUser(user, Long.parseLong(json.getString("item_id")));
         return new ResponseEntity<>(ItemService.getItembyUser(user, Long.parseLong(json.getString("item_id"))) ,HttpStatus.ACCEPTED);
     }
-    
+
+    @GetMapping("/items")
+    public ResponseEntity<?> getItems( ){
+        return new ResponseEntity<>(ItemService.getAll(),HttpStatus.ACCEPTED);
+    }
+
     @GetMapping("")
     public ResponseEntity<?> getSubastas(){
         return new ResponseEntity<>(SubastaService.getAll() ,HttpStatus.ACCEPTED);
