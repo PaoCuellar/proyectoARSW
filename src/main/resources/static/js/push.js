@@ -9,6 +9,7 @@ var pushS = (function () {
     var connected = false;
     var subastaIdSelected;
     
+    
     class subasta{
         constructor(subast){
             this.userId = subast.user.id;
@@ -19,8 +20,8 @@ var pushS = (function () {
             this.name = subast.item.name;
         }
     }
-
-    var end = new Date('12/08/2020 9:30 AM');
+    
+        var end = new Date('12/08/2020 9:30 AM');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -50,24 +51,13 @@ var pushS = (function () {
     }
 
     timer = setInterval(showRemaining, 1000);
-
-
+    
     function setconnected(){
         connected = true;
     }
     
-    function setsubastaID(){
-        var coockie = document.cookie;
-        var values = coockie.split(";");
-        console.log(values);
-        for (var i = 0; i<values.length;i++){
-            var temp = values[i].replace(" ","").split("=");
-            console.log(temp[1]);
-            if (temp[0]==="subastaId"){
-                subastaIdSelected = temp[1];
-                break
-            }
-        }
+    function setsubastaID(id){
+        subastaIdSelected = id;
     }
     
     var connectAndSubscribe = function() {
@@ -82,22 +72,24 @@ var pushS = (function () {
             console.log('Connected: ' + frame);
             setconnected();
             stompClient.subscribe("/topic/subasta."+subastaIdSelected,function (Subasta) {
-                var theObject=JSON.parse(Subasta.body); 
+                alert("¡Nueva oferta detectada!");
+                var theObject=JSON.parse(Subasta.body);
+                console.log(Subasta);
                 reload(theObject);
             });
         });
         
     };
     
-    function reload (){  
-        console.log("RELOAD----- "+subastaIdSelected);
+    function reload (subastaId){  
+        console.log("RELOAD----- "+subastaId);
         $.getScript(module, function(){
-            api.getSubastaById(subastaIdSelected, refresh);
+            api.getSubastaById(subastaId, refresh);
         });
     }
     
     function setSubasta(subast){
-        subastaSelected = new subasta(subast); 
+        this.subastaSelected = new subasta(subast); 
     }
     
     function refresh(subasta){
@@ -107,25 +99,24 @@ var pushS = (function () {
         setSubasta(subasta);
         document.getElementById('relevantInfo').style.visibility = "hidden";
         $('#relevantInfo').empty();
+        htmlProduct(subasta);
+        $('#relevantInfo').append(product);
         document.getElementById('relevantInfo').style.visibility = "visible";
-        document.getElementById('descriptionproduct').innerHTML = subastaSelected.description;
-        document.getElementById('titleproduct').innerHTML = subastaSelected.name;
-        document.getElementById('newprice').innerHTML = subastaSelected.highestPush;
     }
     
-    function postedPush(){
+    function postedPush(subastaId){
         console.log("POSTED");
-        console.log('/app/subasta.'+subastaIdSelected);
+        console.log('/app/subasta.'+subastaId);
         console.log(subastaSelected);
         if (connected){
-            stompClient.send("/app/subasta."+subastaIdSelected, {}, JSON.stringify(subastaSelected));
+            stompClient.send("/app/subasta."+subastaId, {}, JSON.stringify(this.subastaSelected));
         }
         
     }
     
     function htmlProduct(subastaSelected){
-        console.log("Subasta ID : "+ subastaSelected.id);
-        product ="<div class=\"grid images_3_of_2\">"
+        console.log("Subasta ID : "+ this.subastaSelected.id);
+        product = "<div class=\"grid images_3_of_2\">"
                 +"<ul id=\"etalage\">"
                 +"<li>"
                 +"<a href=\"optionallink.html\">"
@@ -137,16 +128,15 @@ var pushS = (function () {
                 +"<div class=\"clearfix\"></div>"
                 +"</div>"
                 +"<div class=\"desc1 span_3_of_2\">"
-                +"<h1>"+"$"+subastaSelected.name+"</h1>"
+                +"<h1>"+"$"+this.subastaSelected.name+"</h1>"
                 +"<div  class=\"price_single\">"  
-                +"<span class=\"reducedfrom\">"+"$"+subastaSelected.highestPush+"</span>"
+                +"<span class=\"reducedfrom\">"+"$"+this.subastaSelected.highestPush+"</span>"
                 +"<input type=\"text\" id=\"offerSumited\" placeholder=\"OfferSumited\"><a href=\"#\"> </a>"
                 +"</div>"
                 +"<h2 class=\"quick\">Descripción:</h2>"
-                +"<p class=\"quick_desc\">"+subastaSelected.description+"</p>"
-
-                +"<button class=\"btn btn-outline-primary\" onclick=\"pushS.pushSubasta("+subastaSelected.id+",20191919,"+"offerSumited.value)\">Ofertar</button>"
-
+                +"<p class=\"quick_desc\">"+this.subastaSelected.description+"</p>"
+                +"<button class=\"btn btn-outline-primary\" onclick=\"pushS.pushSubasta("+this.subastaSelected.id+",20191919,"+"offerSumited.value)\">Ofertar</button>"
+        
                 +"</div>"
                 +"<div class=\"clearfix\"> </div>";
     }
@@ -157,28 +147,23 @@ return {
             
     },
     
-    pushSubasta: function(userId,push ){
+    pushSubasta: function(subastaId,userId,push ){
         $.getScript(module, function(){
-            api.postSubastaPush(subastaIdSelected,userId,push);
+            api.postSubastaPush(subastaId,userId,push);
         });
-        postedPush();
-        subastaSelected.highestPush = push;
-        
-         $.getScript(module, function(){
-            api.getSubastaById(subastaIdSelected, refresh);
+        postedPush(subastaId);
+        $.getScript(module, function(){
+            api.getSubastaById(subastaId, refresh);
         });
-
         
     },
 
-    load: function(){
-        setsubastaID();
+    load: function(subastaId){
+        setsubastaID(subastaId);
         $.getScript(module, function(){
-            api.getSubastaById(subastaIdSelected,refresh);
+            api.getSubastaById(subastaId, refresh);
         });
         
     }
-    
-    
 };
 })();
