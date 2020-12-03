@@ -94,6 +94,16 @@ public class SubastaController {
         return new ResponseEntity<>(ItemService.getAll(),HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/usuarios")
+    public ResponseEntity<?> getUsuarios( ){
+        return new ResponseEntity<>(UserService.getAll(),HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping("/categorias")
+    public ResponseEntity<?> getCategorias( ){
+        return new ResponseEntity<>(CategoryService.getAll(),HttpStatus.ACCEPTED);
+    }
+
     @GetMapping("")
     public ResponseEntity<?> getSubastas(){
         return new ResponseEntity<>(SubastaService.getAll() ,HttpStatus.ACCEPTED);
@@ -168,21 +178,6 @@ public class SubastaController {
             return new ResponseEntity<>("No se pudo hacer la puja", HttpStatus.BAD_REQUEST);
         }
     }
-/** 
-    @PostMapping("/createSubasta")
-     public ResponseEntity<?> createSubasta(@RequestBody String data) throws ParseException{
-         System.out.println(data);
-         JSONObject json = new JSONObject(data);
-         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-         Usuario user = UserService.findById(Long.parseLong(json.getString("user_id")));
-         Item it = ItemService.findById(Long.parseLong(json.getString("item_id")));
-         Date dateInicio = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
-         Date dateFin = new Date(sdf.parse(json.getString("fechaInicio")).getTime());
-         Subasta subasta = new Subasta(it.getId(),it,user,dateInicio, dateFin, Long.parseLong(json.getString("highestPush")));
-         SubastaService.create(subasta);
-         return new ResponseEntity<>(HttpStatus.CREATED);  
-    }
-*/
 
 //se puede borrar...
     @RequestMapping(method = RequestMethod.POST)
