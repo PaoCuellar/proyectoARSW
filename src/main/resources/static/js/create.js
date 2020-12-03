@@ -8,11 +8,7 @@ $(document).ready(function () {
 			"categoria": $("#productcategory").val(),
 			"description": $("#productdescription").val(),
 		})
-		/* console.log({
-			"highestPush": $("#productprice").val(),
-			"fechaInicio": new Date(),
-			"fechaFin": $("#limitdate").val(),
-		}) */
+
 		//create Item
 		$.ajax({
 			type: "POST",
