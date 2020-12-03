@@ -129,6 +129,15 @@ El A/B Testing consiste en desarrollar y lanzar dos o más versiones de un mismo
 
 ![ab](/Diagramas/V.F/ab.png)
 
+En específico nos centraremos en las KPI generadas en los mapas y en el conversion rate.
+
+## Conversion rate:
+Es el porcentaje de usuarios que realizan una acción específica ya sea realizar una compra, una descarga, un registro o una reserva. La tasa de conversión se obtiene como resultado de dividir el número de objetivos conseguidos entre los usuarios únicos que visitan la web.
+
+![formula](/Diagramas/V.F/formula.jpg)
+
+Los principales estudios sobre la tasa de conversión muestran que la tasa de conversión media es de entre un 1% y un 3%, es decir, de cada 100 personas que entran en una web entre 1 y 3 personas realizan la acción que queremos.
+
 ## Funcionamiento
 Este método consiste en desarrollar dos versiones de un mismo elemento que vamos a lanzar al mercado (por ejemplo, un botón de  azul y uno amarillo), y luego utilizar las métricas de cada variación para evaluar cuál funciona mejor.
 
@@ -209,5 +218,7 @@ Implementamos el real time en nuestro API mediante la oferta de la subasta:
 
 ![Publicar articulo](/Diagramas/V.F/Pruebasa-b8.PNG)
 ![Publicar articulo](/Diagramas/V.F/Pruebasa-b9.PNG)
+
+Estos resultados demuestran que las modificaciones realizadas a el Front por ahora han mejorado la experiencia de uso.
 
 
