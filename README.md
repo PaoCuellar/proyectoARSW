@@ -34,13 +34,13 @@ la opción de poder visualizar los datos en gráficas, de tal manera que sean mu
 
 ## Administrador
 
-![Diagrama de clases](/Diagramas/UC/CasosdeusoAdministrador.png)
+![Diagrama de clases](/Diagramas/V.F/CasosdeusoAdministrador.png)
 ## Vendedor
 
-![Diagrama de clases](/Diagramas/UC/CasosdeusoVendedor.png)
+![Diagrama de clases](Diagramas/V.F/CasosdeusoVendedor.png)
 ## Comprador
 
-![Diagrama de clases](/Diagramas/UC/CasosdeusoComprador.png)
+![Diagrama de clases](/Diagramas/V.F/CasosdeusoComprador.png)
 ## Historias de usuario
 
 Podrás consultar las historias de usuario en el siguiente [link.](https://dinipa.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=SUB&selectedIssue=SUB-4)
@@ -80,11 +80,11 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa
 
 ## Diagrama de Componentes
 
-![Componentes](/Diagramas/ComponentDiagram.jpeg)
+![Componentes](/Diagramas/V.F/ComponentDiagram.png)
 
 ## Diagrama de Despliegue
 
-![Despliegue](/Diagramas/DeploymentDiagram.jpeg)
+![Despliegue](/Diagramas/V.F/DeploymentDiagram.png)
 
 ## Diagrama de Base de Datos
 
@@ -109,10 +109,57 @@ En este proyecto pusimos en práctica la utilización de **la metodología Scrum
 
 ### Atributos No Funcionales
 En este proyecto decidimos documentar dos escenarios que muestren nuestra apropiación del requerimiento no funcional. 
-Escogimos la **Usabilidad** y la demoestraremos por medio de la herramienta **Crazy Egg** 
+Escogimos la **Usabilidad** y la demostraremos por medio del uso de las pruebas A/B y de la herramienta **Crazy Egg** 
+
+### Pruebas A/B
+El A/B Testing consiste en desarrollar y lanzar dos o más versiones de un mismo elemento y medir cuál funciona mejor. Es una prueba que nos sirve para optimizar una estrategia de  marketing o para mejorar la usabilidad de una pagina web.
+
+## Funcionamiento
+Este método consiste en desarrollar dos versiones de un mismo elemento que vamos a lanzar al mercado (por ejemplo, un botón de  azul y uno amarillo), y luego utilizar las métricas de cada variación para evaluar cuál funciona mejor.
+
+En nuestro caso decidimos usar algunas modificaciones como lo fueron:
+
+* Cambiar palabras, colores, tamaños y ubicación textos.
+* Cambiar titulares de la descripción de algunos productos.
+* Reducir la extensión de un formulario y tipos de campos.
+* Cambiar el layout visual de la página web.
+* Cambiar algunas imágenes de productos.
+
+### Crazy Egg
+Crazy Egg es una herramienta de usabilidad y optimización web que monitoriza la actividad de los usuarios en una página web. Permite extraer información muy útil de cara a ver cómo se navega la página, ya que muestra, por ejemplo, en qué secciones de la web se detienen los usuarios, hasta qué punto hacen scroll, dónde hacen clic, etc. Con estos datos se pueden tomar decisiones cruciales tanto de diseño como de usabilidad.
+
+### Prueba antes y despues de cache
+
+Implementamos una de las soluciones de cache soportadas por Spring llamada JCache. Esta implementación nos redujo los timepos de carga medidos por Crazy Egg como se muestra a continuación:
+* Antes
+  ![cache](/Diagramas/V.F/Pruebainicialantesdecache1.PNG)
+  
+* Después  
+  ![cache](/Diagramas/V.F/Pruebainicialantesdecache3.PNG)  
 
 ## Escenarios de calidad
 * Realizar una puja por un producto
+* En primer lugar en Crazy Egg definimos 3 Variantes para este caso de uso.
+* Variante de Control       
+![Puja producto](/Diagramas/V.F/Pruebasa-b4.PNG)
+* Variante uno
+![Puja producto](/Diagramas/V.F/Pruebasa-b5.PNG)
+* Variante dos
+![Puja producto](/Diagramas/V.F/Pruebasa-b6.PNG)
+* Resultados
+![Puja producto](/Diagramas/V.F/Pruebasa-b7.PNG)
+![Puja producto](/Diagramas/V.F/Pruebasa-b1.PNG)
+![Puja producto](/Diagramas/V.F/Pruebasa-b2.PNG)
 
+        
 * Publicar un articulo
+* En primer lugar en Crazy Egg definimos 3 Variantes para este caso de uso.
+* Variante de Control 
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b10.PNG)
+* Variante uno
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b11.PNG)
+* Resultados
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b8.PNG)
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b9.PNG)
+
 
