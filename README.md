@@ -10,12 +10,12 @@
       
 
 ## Roles:
-|     Nombre    |     Rol         |
-|:--------------:|:-------------: |
-|Paola Andrea Cuellar López |Team Developer    |
-|Nicolas Ortega Limas |Team Developer   |
-|Diego Chinchilla |Team Developer   |
-|Ing. Sebastián Henao Pinzón |Product Owner   |
+|     Nombre    |     Rol         | Trabajo realizado
+|:--------------:|:-------------: |:-------------: |
+|Paola Andrea Cuellar López |Team Developer    |  Front End Developer  |
+|Nicolas Ortega Limas |Team Developer   | Application Arquitect |
+|Diego Chinchilla |Team Developer   | Back End Developer
+|Ing. Sebastián Henao Pinzón |Product Owner   |   |
 # SubastasDINIPA
 ## Resumen
 ## Descripción (antecedentes, problema que se resuelve, etc.). 
@@ -23,17 +23,24 @@ Esta aplicación tiene como objetivo principal brindar a la comunidad una herram
 Permite a los usuarios publicar e interactuar activamente con las
 subastas; registrando ofertas, reacciones y comentarios, además de brindar
 la opción de poder visualizar los datos en gráficas, de tal manera que sean mucho más amenos al usuario.
+
+## Herramientas para seguir el estado del proyecto
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/66413a0ec2734ce6b0ae2e8a9271ffbc)](https://www.codacy.com/manual/PaoCuellar/proyectoARSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PaoCuellar/proyectoARSW&amp;utm_campaign=Badge_Grade)
+[![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://subastasdinipa.herokuapp.com)
+
 ## Diagramas de casos de uso:
 
 ## Administrador
 
-![Diagrama de clases](/Diagramas/UC/CasosdeusoAdministrador.png)
+![Diagrama de clases](/Diagramas/V.F/CasosdeusoAdministrador.png)
 ## Vendedor
 
-![Diagrama de clases](/Diagramas/UC/CasosdeusoVendedor.png)
+![Diagrama de clases](Diagramas/V.F/CasosdeusoVendedor.png)
 ## Comprador
 
-![Diagrama de clases](/Diagramas/UC/CasosdeusoComprador.png)
+![Diagrama de clases](/Diagramas/V.F/CasosdeusoComprador.png)
 ## Historias de usuario
 
 Podrás consultar las historias de usuario en el siguiente [link.](https://dinipa.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=SUB&selectedIssue=SUB-4)
@@ -73,11 +80,11 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa
 
 ## Diagrama de Componentes
 
-![Componentes](/Diagramas/ComponentDiagram.jpeg)
+![Componentes](/Diagramas/V.F/ComponentDiagram.png)
 
 ## Diagrama de Despliegue
 
-![Despliegue](/Diagramas/DeploymentDiagram.jpeg)
+![Despliegue](/Diagramas/V.F/DeploymentDiagram.png)
 
 ## Diagrama de Base de Datos
 
@@ -96,14 +103,63 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa
   ![VistaArticuloNormal](/Imagenes/VistaUsuarioNormal.png)
 * Vista de las subastas participadas por el usuario
   ![SubastasParticipadas](/Imagenes/SubastaParticipadas.png)
+  
 ### Metodología.
+En este proyecto pusimos en práctica la utilización de **la metodología Scrum** en la cual el equipo se reúne y planea lo que se realizará en los diferentes Sprint, la herramienta que se utilizo fue **JIRA** la cual nos permite llevar un control de las historias de usuario y repartir las tareas entre los integrantes.
 
-En este proyecto pusimos en práctica la utilización de **la metodología Scrum** en la cual el equipo se reúne y planea lo que se realizará en los diferentes Sprint, la herramienta que se utilizo fue **Una hoja de excel para llevar los registros** la cual nos permite llevar un control de las historias de usuario y repartir las tareas entre los integrantes.
+### Atributos No Funcionales
+En este proyecto decidimos documentar dos escenarios que muestren nuestra apropiación del requerimiento no funcional. 
+Escogimos la **Usabilidad** y la demostraremos por medio del uso de las pruebas A/B y de la herramienta **Crazy Egg** 
 
-Al finalizar cada Sprint, el equipo se reúne para planear el siguiente y se comentan lo que sucedió con el anterior.
+### Pruebas A/B
+El A/B Testing consiste en desarrollar y lanzar dos o más versiones de un mismo elemento y medir cuál funciona mejor. Es una prueba que nos sirve para optimizar una estrategia de  marketing o para mejorar la usabilidad de una pagina web.
 
-## Herramientas
+## Funcionamiento
+Este método consiste en desarrollar dos versiones de un mismo elemento que vamos a lanzar al mercado (por ejemplo, un botón de  azul y uno amarillo), y luego utilizar las métricas de cada variación para evaluar cuál funciona mejor.
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/66413a0ec2734ce6b0ae2e8a9271ffbc)](https://www.codacy.com/manual/PaoCuellar/proyectoARSW?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PaoCuellar/proyectoARSW&amp;utm_campaign=Badge_Grade)
-[![CircleCI](https://circleci.com/gh/PaoCuellar/proyectoARSW.svg)](https://app.circleci.com/pipelines/github/PaoCuellar/proyectoARSW)
-[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://subastasdinipa.herokuapp.com)
+En nuestro caso decidimos usar algunas modificaciones como lo fueron:
+
+* Cambiar palabras, colores, tamaños y ubicación textos.
+* Cambiar titulares de la descripción de algunos productos.
+* Reducir la extensión de un formulario y tipos de campos.
+* Cambiar el layout visual de la página web.
+* Cambiar algunas imágenes de productos.
+
+### Crazy Egg
+Crazy Egg es una herramienta de usabilidad y optimización web que monitoriza la actividad de los usuarios en una página web. Permite extraer información muy útil de cara a ver cómo se navega la página, ya que muestra, por ejemplo, en qué secciones de la web se detienen los usuarios, hasta qué punto hacen scroll, dónde hacen clic, etc. Con estos datos se pueden tomar decisiones cruciales tanto de diseño como de usabilidad.
+
+### Prueba antes y despues de cache
+
+Implementamos una de las soluciones de cache soportadas por Spring llamada JCache. Esta implementación nos redujo los timepos de carga medidos por Crazy Egg como se muestra a continuación:
+* Antes
+  ![cache](/Diagramas/V.F/Pruebainicialantesdecache1.PNG)
+  
+* Después  
+  ![cache](/Diagramas/V.F/Pruebainicialantesdecache3.PNG)  
+
+## Escenarios de calidad
+* Realizar una puja por un producto
+* En primer lugar en Crazy Egg definimos 3 Variantes para este caso de uso.
+* Variante de Control       
+![Puja producto](/Diagramas/V.F/Pruebasa-b4.PNG)
+* Variante uno
+![Puja producto](/Diagramas/V.F/Pruebasa-b5.PNG)
+* Variante dos
+![Puja producto](/Diagramas/V.F/Pruebasa-b6.PNG)
+* Resultados
+![Puja producto](/Diagramas/V.F/Pruebasa-b7.PNG)
+![Puja producto](/Diagramas/V.F/Pruebasa-b1.PNG)
+![Puja producto](/Diagramas/V.F/Pruebasa-b2.PNG)
+
+        
+* Publicar un articulo
+* En primer lugar en Crazy Egg definimos 3 Variantes para este caso de uso.
+* Variante de Control 
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b10.PNG)
+* Variante uno
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b11.PNG)
+* Resultados
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b8.PNG)
+![Publicar articulo](/Diagramas/V.F/Pruebasa-b9.PNG)
+
+
