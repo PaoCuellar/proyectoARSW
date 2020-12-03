@@ -43,7 +43,7 @@ la opción de poder visualizar los datos en gráficas, de tal manera que sean mu
 ## _Planeación en JIRA_
 [JIRA](https://dinipa.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=SUB&view=planning.nodetail&issueLimit=100&atlOrigin=eyJpIjoiNWFjOTMyNmE2ZDExNDRjM2FjZGJmZGZmMDJjY2Y0YzEiLCJwIjoiaiJ9)
 ## _Manual de Usuario_
-[Manual](https://drive.google.com/drive/folders/1WC7crx8RnaEJA80IYtP0BixXPEDTTPFi)
+[Manual](https://drive.google.com/file/d/1vmt2DOWO130cWTj1kx5Do0whaVNj2zT5/view?usp=sharing)
 
 
 ## Diagramas de casos de uso:
