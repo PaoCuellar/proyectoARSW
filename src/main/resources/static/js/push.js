@@ -115,7 +115,7 @@ var pushS = (function () {
     }
     
     function htmlProduct(subastaSelected){
-        console.log("Subasta ID : "+ this.subastaSelected.id);
+        console.log("Subasta ID : "+ subastaSelected.id);
         product = "<div class=\"grid images_3_of_2\">"
                 +"<ul id=\"etalage\">"
                 +"<li>"
@@ -128,14 +128,14 @@ var pushS = (function () {
                 +"<div class=\"clearfix\"></div>"
                 +"</div>"
                 +"<div class=\"desc1 span_3_of_2\">"
-                +"<h1>"+"$"+this.subastaSelected.name+"</h1>"
+                +"<h1>"+"$"+subastaSelected.name+"</h1>"
                 +"<div  class=\"price_single\">"  
-                +"<span class=\"reducedfrom\">"+"$"+this.subastaSelected.highestPush+"</span>"
+                +"<span class=\"reducedfrom\">"+"$"+subastaSelected.highestPush+"</span>"
                 +"<input type=\"text\" id=\"offerSumited\" placeholder=\"OfferSumited\"><a href=\"#\"> </a>"
                 +"</div>"
                 +"<h2 class=\"quick\">Descripción:</h2>"
-                +"<p class=\"quick_desc\">"+this.subastaSelected.description+"</p>"
-                +"<button class=\"btn btn-outline-primary\" onclick=\"pushS.pushSubasta("+this.subastaSelected.id+",20191919,"+"offerSumited.value)\">Ofertar</button>"
+                +"<p class=\"quick_desc\">"+subastaSelected.description+"</p>"
+                +"<button class=\"btn btn-outline-primary\" onclick=\"pushS.pushSubasta("+subastaSelected.id+",20191919,"+"offerSumited.value)\">Ofertar</button>"
         
                 +"</div>"
                 +"<div class=\"clearfix\"> </div>";
