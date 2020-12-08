@@ -81,8 +81,9 @@ var pushS = (function () {
             console.log('Connected: ' + frame);
             setconnected();
             stompClient.subscribe("/topic/subasta."+subastaIdSelected,function (Subasta) {
-                var theObject=JSON.parse(Subasta.body); 
-                reload(theObject);
+                var theObject=JSON.parse(Subasta.body);
+                subastaIdSelected = theObject;
+                reload();
             });
         });
         
@@ -112,14 +113,14 @@ var pushS = (function () {
         document.getElementById('newprice').innerHTML = subastaSelected.highestPush;
     }
     
-    function postedPush(){
+    function postedPush(push){
         console.log("POSTED");
         console.log('/app/subasta.'+subastaIdSelected);
         console.log(subastaSelected);
+        subastaSelected.highestPush = push;
         if (connected){
             stompClient.send("/app/subasta."+subastaIdSelected, {}, JSON.stringify(subastaSelected));
-        }
-        
+        }       
     }
     
     function htmlProduct(subastaSelected){
@@ -160,12 +161,11 @@ return {
         $.getScript(module, function(){
             api.postSubastaPush(subastaIdSelected,userId,push);
         });
-        postedPush();
-        subastaSelected.highestPush = push;
         
-         $.getScript(module, function(){
-            api.getSubastaById(subastaIdSelected, refresh);
-        });
+        postedPush(push);
+        
+        
+         
 
         
     },
