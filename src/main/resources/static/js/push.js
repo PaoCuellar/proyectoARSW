@@ -7,6 +7,7 @@ var pushS = (function () {
     var subastaSelected;
     var connected = false;
     var subastaIdSelected;
+    var end;
     
     class subasta{
         constructor(subast){
@@ -16,10 +17,11 @@ var pushS = (function () {
             this.highestPush = subast.highestPush;
             this.description = subast.item.description;
             this.name = subast.item.name;
+            this.endDate = subast.fechaFin;
         }
     }
 
-    var end = new Date('12/08/2020 9:30 AM');
+    var end = new Date('12/31/2020 9:30 AM');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -28,7 +30,7 @@ var pushS = (function () {
     var timer;
 
     function showRemaining() {
-        var now = new Date();
+        now = new Date();
         var distance = end - now;
         if (distance < 0) {
 
@@ -101,10 +103,11 @@ var pushS = (function () {
     }
     
     function refresh(subasta){
+        setSubasta(subasta);
         if (!connected){
+            now = new Date(subastaSelected.endDate+' 12:59 PM');
             connectAndSubscribe();
         }
-        setSubasta(subasta);
         document.getElementById('relevantInfo').style.visibility = "hidden";
         $('#relevantInfo').empty();
         document.getElementById('relevantInfo').style.visibility = "visible";
