@@ -194,7 +194,7 @@ public class SubastaController {
         System.out.println("Nuevo asiento recibido en el servidor!:"+subastaId);
         Subasta s = SubastaService.findById(Long.parseLong(subastaId));
         System.out.println(s.getId());
-        msgt.convertAndSend("/topic/subasta."+subastaId, s);
+        msgt.convertAndSend("/topic/subasta."+subastaId, s.getId());
     }
     
 }

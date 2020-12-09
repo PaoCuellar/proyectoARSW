@@ -7,6 +7,7 @@ var pushS = (function () {
     var subastaSelected;
     var connected = false;
     var subastaIdSelected;
+    var end;
     
     class subasta{
         constructor(subast){
@@ -16,10 +17,11 @@ var pushS = (function () {
             this.highestPush = subast.highestPush;
             this.description = subast.item.description;
             this.name = subast.item.name;
+            this.endDate = subast.fechaFin;
         }
     }
 
-    var end = new Date('12/09/2020 9:30 PM');
+    var end = new Date('12/31/2020 9:30 AM');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -28,7 +30,7 @@ var pushS = (function () {
     var timer;
 
     function showRemaining() {
-        var now = new Date();
+        now = new Date();
         var distance = end - now;
         if (distance < 0) {
 
@@ -81,8 +83,9 @@ var pushS = (function () {
             console.log('Connected: ' + frame);
             setconnected();
             stompClient.subscribe("/topic/subasta."+subastaIdSelected,function (Subasta) {
-                var theObject=JSON.parse(Subasta.body); 
-                reload(theObject);
+                var theObject=JSON.parse(Subasta.body);
+                subastaIdSelected = theObject;
+                reload();
             });
         });
         
@@ -100,10 +103,11 @@ var pushS = (function () {
     }
     
     function refresh(subasta){
+        setSubasta(subasta);
         if (!connected){
+            now = new Date(subastaSelected.endDate+' 12:59 PM');
             connectAndSubscribe();
         }
-        setSubasta(subasta);
         document.getElementById('relevantInfo').style.visibility = "hidden";
         $('#relevantInfo').empty();
         document.getElementById('relevantInfo').style.visibility = "visible";
@@ -112,14 +116,14 @@ var pushS = (function () {
         document.getElementById('newprice').innerHTML = subastaSelected.highestPush;
     }
     
-    function postedPush(){
+    function postedPush(push){
         console.log("POSTED");
         console.log('/app/subasta.'+subastaIdSelected);
         console.log(subastaSelected);
+        subastaSelected.highestPush = push;
         if (connected){
             stompClient.send("/app/subasta."+subastaIdSelected, {}, JSON.stringify(subastaSelected));
-        }
-        
+        }       
     }
     
     function htmlProduct(subastaSelected){
@@ -160,12 +164,11 @@ return {
         $.getScript(module, function(){
             api.postSubastaPush(subastaIdSelected,userId,push);
         });
-        postedPush();
-        subastaSelected.highestPush = push;
         
-         $.getScript(module, function(){
-            api.getSubastaById(subastaIdSelected, refresh);
-        });
+        postedPush(push);
+        
+        
+         
 
         
     },
