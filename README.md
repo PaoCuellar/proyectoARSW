@@ -10,7 +10,7 @@
 |     Nombre    |     Rol         | Trabajo realizado
 |:--------------:|:-------------: |:-------------: |
 |Paola Andrea Cuellar López |Team Developer    |  Desarrollo de la capa de Front End  |
-|Nicolas Ortega Limas |Team Developer   | Pruebas ,requerimiento no funcionales y Diagramas |
+|Nicolas Ortega Limas |Team Developer   | Front ,requerimiento no funcionales y Diagramas |
 |Diego Chinchilla |Team Developer   | Desarrollo de la capa de Back End |
 |Ing. Sebastián Henao Pinzón |Product Owner   | Revisor del proyecto  |
 # SubastasDINIPA
