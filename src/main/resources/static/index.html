@@ -14,6 +14,7 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script src="js/responsiveslides.min.js"></script>
+<script type="text/javascript" src="js/listas.js"></script>
 <script>
     $(function () {
       $("#slider").responsiveSlides({
@@ -98,35 +99,7 @@
 	   	 <div class="sidebar">
 			<div class="menu_box">
 		    <h3 class="menu_head">Productos</h3>
-			  <ul class="menu">
-				<li class="item1"><a href="#"><img class="arrow-img" src="images/f_menu.png" alt=""/> Para niños </a>
-					<ul class="cute">
-						<li class="subitem1"><a href="#"> Peluches </a></li>
-						<li class="subitem2"><a href="#"> Juguetes </a></li>
-						<li class="subitem3"><a href="#"> Arte </a></li>
-					</ul>
-				</li>
-				<li class="item2"><a href="#"><img class="arrow-img" src="images/f_menu.png" alt=""/> Para mujeres </a>
-					<ul class="cute">
-						<li class="subitem1"><a href="#"> Ropa </a></li>
-						<li class="subitem2"><a href="#"> Maquillaje </a></li>
-						<li class="subitem3"><a href="#"> Calzado </a></li>
-					</ul>
-				</li>
-				<li class="item3"><a href="#"><img class="arrow-img" src="images/f_menu.png" alt=""/> Videojuegos </a>
-					<ul class="cute">
-						<li class="subitem1"><a href="#"> Llaveros </a></li>
-						<li class="subitem2"><a href="#"> Consolas </a></li>
-						<li class="subitem3"><a href="#"> Peluches </a></li>
-					</ul>
-				</li>
-				<li class="item4"><a href="#"><img class="arrow-img" src="images/f_menu.png" alt=""/> Antigüedades </a>
-					<ul class="cute">
-						<li class="subitem1"><a href="#"> Relojes </a></li>
-						<li class="subitem2"><a href="#"> Electrónicos </a></li>
-						<li class="subitem3"><a href="#"> Decoración </a></li>
-					</ul>
-				</li>
+			  <ul class="menu" id="listCategorias">
 			</ul>
 		</div>
 				<!--initiate accordion-->
@@ -184,82 +157,9 @@
 			</div>
 	   </div> 
 	   <div class="col-md-9 content_right">
-	   	<div class="top_grid1">
-	     <div class="col-md-4 box_2">
-	     	<div class="grid_1"><a >
-	     		<div class="b-link-stroke b-animate-go  thickbox">
-		        <img src="images/producto.png" class="img-responsive" alt=""/></div>
-	     	   <div class="grid_2">
-	     	  	<p>Computador </p>
-	     	  	<ul class="grid_2-bottom">
-	     	  		<li class="grid_2-left"><p>$100.000</p></li>
-	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " onclick="subastas.setSubastaId('101919191')"  target="_self" title="Get It">Ofertar</div></li>
-	     	  		<div class="clearfix"> </div>
-	     	  	</ul>
-	     	   </div>
-            </div>
-	     </a></div>
-	     <div class="col-md-8 box_1"><a href="404.html">
-	       <div class="grid_1">
-	     	  <div class="b-link-stroke b-animate-go  thickbox">
-		        <img src="images/producto.png" class="img-responsive" alt=""/> </div>
-	     	  <div class="grid_2">
-	     	  	<p>Reproductor de video </p>
-	     	  	<ul class="grid_2-bottom">
-	     	  		<li class="grid_2-left"><p>$163.000</p></li>
-	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Ofertar</div></li>
-	     	  		<div class="clearfix"> </div>
-	     	  	</ul>
-	     	  </div>
-	     	</div>
-	     </a></div>
-	     <div class="clearfix"> </div>
-	    </div> 
-	    <div class="top_grid2">
-	      <div class="col-md-4 top_grid1-box1"><a href="404.html">
-	     	<div class="grid_1">
-	     	  <div class="b-link-stroke b-animate-go  thickbox">
-		        <img src="images/producto.png" class="img-responsive" alt=""/> </div>
-	     	  <div class="grid_2">
-	     	  	<p>Teléfono antiguo</p>
-	     	  	<ul class="grid_2-bottom">
-	     	  		<li class="grid_2-left"><p>$45.000</p></li>
-	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Ofertar</div></li>
-	     	  		<div class="clearfix"> </div>
-	     	  	</ul>
-	     	  </div>
-	     	</div>
-	     </a></div>
-	     <div class="col-md-4 top_grid1-box1"><a href="404.html">
-	     	<div class="grid_1">
-	     	  <div class="b-link-stroke b-animate-go  thickbox">
-		        <img src="images/producto.png" class="img-responsive" alt=""/> </div>
-	     	  <div class="grid_2">
-	     	  	<p>Radio</p>
-	     	  	<ul class="grid_2-bottom">
-	     	  		<li class="grid_2-left"><p>$63.000</p></li>
-	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Ofertar</div></li>
-	     	  		<div class="clearfix"> </div>
-	     	  	</ul>
-	     	  </div>
-	     	</div>
-	     </a></div>
-	     <div class="col-md-4 top_grid1-box1"><a href="404.html">
-	     	<div class="grid_1">
-	     	  <div class="b-link-stroke b-animate-go  thickbox">
-		        <img src="images/producto.png" class="img-responsive" alt=""/> </div>
-	     	  <div class="grid_2">
-	     	  	<p>Televisor </p>
-	     	  	<ul class="grid_2-bottom">
-	     	  		<li class="grid_2-left"><p>$105.000</p></li>
-	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Ofertar</div></li>
-	     	  		<div class="clearfix"> </div>
-	     	  	</ul>
-	     	  </div>
-	     	</div>
-	    </a> </div>
-	     <div class="clearfix"> </div>
-	    </div> 
+	   	<div class="top_grid1" id="listProductos">
+		</div> 
+		<div class="clearfix"> </div>
 	    <h4 class="head"><span class="m_2"> Productos</span> Populares </h4>
 	    <div class="top_grid2">
 	     <div class="col-md-4 top_grid1-box1"><a href="404.html">
@@ -276,7 +176,7 @@
 	     	   </div>
             </div>
 	     </a></div>
-	     <div class="col-md-8 box_1"><a href="404.html">
+	     <div class="col-md-4 box_2"><a href="404.html">
 	       <div class="grid_1">
 	     	  <div class="b-link-stroke b-animate-go  thickbox">
 		        <img src="images/producto.png" class="img-responsive" alt=""/> </div>

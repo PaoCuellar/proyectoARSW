@@ -13,7 +13,7 @@ var pushS = (function () {
         constructor(subast){
             this.userId = subast.user.id;
             this.id = subast.id;
-            this.userWinning = subast.userWinning.id;
+            this.userWinning = subast.userWinning? subast.userWinning.id:null;
             this.highestPush = subast.highestPush;
             this.description = subast.item.description;
             this.name = subast.item.name;
@@ -103,6 +103,7 @@ var pushS = (function () {
     }
     
     function refresh(subasta){
+        console.log(subasta);
         setSubasta(subasta);
         if (!connected){
             now = new Date(subastaSelected.endDate+' 12:59 PM');
@@ -156,8 +157,7 @@ var pushS = (function () {
 
 return {
     connect: function(){
-            connectAndSubscribe();
-            
+            connectAndSubscribe();     
     },
     
     pushSubasta: function(userId,push ){
@@ -166,11 +166,6 @@ return {
         });
         
         postedPush(push);
-        
-        
-         
-
-        
     },
 
     load: function(){
@@ -178,7 +173,6 @@ return {
         $.getScript(module, function(){
             api.getSubastaById(subastaIdSelected,refresh);
         });
-        
     }
     
     
