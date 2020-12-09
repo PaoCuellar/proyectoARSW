@@ -96,7 +96,7 @@ Podrá acceder a nuestro proyecto en el siguiente [link.](https://subastasdinipa
 
 ## Diagrama de Componentes
 
-![Componentes](/Diagramas/V.F/ComponentDiagram.png)
+![Componentes](/Diagramas/Component-Diagram.png)
 
 ## Diagrama de Despliegue
 
