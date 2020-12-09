@@ -19,7 +19,7 @@ var pushS = (function () {
         }
     }
 
-    var end = new Date('12/08/2020 9:30 AM');
+    var end = new Date('12/09/2020 9:30 PM');
 
     var _second = 1000;
     var _minute = _second * 60;
